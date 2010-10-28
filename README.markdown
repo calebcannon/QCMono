@@ -22,10 +22,10 @@ freely, subject to the following restrictions:
 
 ##Additional Sources
 
-#LineNumberingTextView by Koen van der Drift
+###LineNumberingTextView by Koen van der Drift
 http://home.earthlink.net/~kvddrift/software/
 
-#UKSyntaxColoredTextDocument by Uli Kusterer
+###UKSyntaxColoredTextDocument by Uli Kusterer
 http://github.com/uliwitness/UKSyntaxColoredTextDocument
 
 ##Revisions

@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		233E2C640A83C768005A62DF /* Build & Copy */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 233E2D890A83C7AC005A62DF /* Build configuration list for PBXAggregateTarget "Build & Copy" */;
+			buildPhases = (
+				233E2C690A83C783005A62DF /* ShellScript */,
+			);
+			dependencies = (
+				233E2C660A83C76D005A62DF /* PBXTargetDependency */,
+			);
+			name = "Build & Copy";
+			productName = "Build & Install";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		16BA95420A7EB2EB001E4983 /* QCMonoPlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BA95410A7EB2EB001E4983 /* QCMonoPlugIn.m */; };
+		16BA96310A7EB9AC001E4983 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BA96300A7EB9AC001E4983 /* Quartz.framework */; };
+		7238D5520DB6988600E9A42D /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7238D5500DB6988600E9A42D /* Settings.xib */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		A84BA20D126DF51D00AADF42 /* Mono.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84BA20C126DF51D00AADF42 /* Mono.framework */; };
+		A8EE254F126E2AD3006E5AEE /* MonoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE254E126E2AD3006E5AEE /* MonoUtils.m */; };
+		A8EE2852126E521F006E5AEE /* helloworld.exe in Resources */ = {isa = PBXBuildFile; fileRef = A8EE2851126E521F006E5AEE /* helloworld.exe */; };
+		A8EE3CF212715AA3006E5AEE /* UKSyntaxColoredTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3CED12715AA3006E5AEE /* UKSyntaxColoredTextViewController.m */; };
+		A8EE3CF312715AA3006E5AEE /* UKSyntaxColoredTextDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3CEF12715AA3006E5AEE /* UKSyntaxColoredTextDocument.m */; };
+		A8EE3CF412715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3CF112715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.m */; };
+		A8EE3CFB12715D60006E5AEE /* NSMenu+DeepSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3CFA12715D60006E5AEE /* NSMenu+DeepSearch.m */; };
+		A8EE3D0012715D74006E5AEE /* UKTextDocGoToBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3CFF12715D74006E5AEE /* UKTextDocGoToBox.m */; };
+		A8EE3D2B12716272006E5AEE /* Syntax Definitions in Resources */ = {isa = PBXBuildFile; fileRef = A8EE3D2612716272006E5AEE /* Syntax Definitions */; };
+		A8EE3D561271649D006E5AEE /* NSArray+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3D551271649D006E5AEE /* NSArray+Color.m */; };
+		A8EE3DC61271EEAE006E5AEE /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = A8EE3DC51271EEAE006E5AEE /* README.markdown */; };
+		A8EE3E1A1272049B006E5AEE /* jewel-green.png in Resources */ = {isa = PBXBuildFile; fileRef = A8EE3E171272049B006E5AEE /* jewel-green.png */; };
+		A8EE3E1B1272049B006E5AEE /* jewel-red.png in Resources */ = {isa = PBXBuildFile; fileRef = A8EE3E181272049B006E5AEE /* jewel-red.png */; };
+		A8EE3E1C1272049B006E5AEE /* jewel-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = A8EE3E191272049B006E5AEE /* jewel-yellow.png */; };
+		A8EE3EDB12722AE5006E5AEE /* NSScanner+SkipUpToCharset.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3EDA12722AE5006E5AEE /* NSScanner+SkipUpToCharset.m */; };
+		A8EE3F0412722C97006E5AEE /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3F0112722C97006E5AEE /* NoodleLineNumberMarker.m */; };
+		A8EE3F0512722C97006E5AEE /* NoodleLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3F0312722C97006E5AEE /* NoodleLineNumberView.m */; };
+		A8EE3F3712722ED9006E5AEE /* NoodleLineNumberScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3F3612722ED9006E5AEE /* NoodleLineNumberScrollView.m */; };
+		A8EE3F3C12722F4E006E5AEE /* NoodleLineNumberingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3F3B12722F4E006E5AEE /* NoodleLineNumberingTextView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		233E2C650A83C76D005A62DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = QCMono;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		16AA5C440A7EEE7300888E31 /* QCMono_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QCMono_Prefix.pch; sourceTree = "<group>"; };
+		16BA95400A7EB2EB001E4983 /* QCMonoPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QCMonoPlugIn.h; sourceTree = "<group>"; };
+		16BA95410A7EB2EB001E4983 /* QCMonoPlugIn.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QCMonoPlugIn.m; sourceTree = "<group>"; };
+		16BA96300A7EB9AC001E4983 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
+		7238D5510DB6988600E9A42D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Settings.xib; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* QCMono.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QCMono.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A84BA20C126DF51D00AADF42 /* Mono.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mono.framework; path = Library/Frameworks/Mono.framework; sourceTree = SDKROOT; };
+		A8EE254D126E2AD3006E5AEE /* MonoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonoUtils.h; sourceTree = "<group>"; };
+		A8EE254E126E2AD3006E5AEE /* MonoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonoUtils.m; sourceTree = "<group>"; };
+		A8EE263A126E4B2C006E5AEE /* mscorlib.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = mscorlib.dll; path = /Library/Frameworks/Mono.framework/Versions/2.8/lib/mono/2.0/mscorlib.dll; sourceTree = "<absolute>"; };
+		A8EE2851126E521F006E5AEE /* helloworld.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = helloworld.exe; sourceTree = "<group>"; };
+		A8EE3CEC12715AA3006E5AEE /* UKSyntaxColoredTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKSyntaxColoredTextViewController.h; sourceTree = "<group>"; };
+		A8EE3CED12715AA3006E5AEE /* UKSyntaxColoredTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKSyntaxColoredTextViewController.m; sourceTree = "<group>"; };
+		A8EE3CEE12715AA3006E5AEE /* UKSyntaxColoredTextDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKSyntaxColoredTextDocument.h; sourceTree = "<group>"; };
+		A8EE3CEF12715AA3006E5AEE /* UKSyntaxColoredTextDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKSyntaxColoredTextDocument.m; sourceTree = "<group>"; };
+		A8EE3CF012715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKMultiSyntaxColoredTextDocument.h; sourceTree = "<group>"; };
+		A8EE3CF112715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKMultiSyntaxColoredTextDocument.m; sourceTree = "<group>"; };
+		A8EE3CF912715D60006E5AEE /* NSMenu+DeepSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMenu+DeepSearch.h"; sourceTree = "<group>"; };
+		A8EE3CFA12715D60006E5AEE /* NSMenu+DeepSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMenu+DeepSearch.m"; sourceTree = "<group>"; };
+		A8EE3CFE12715D74006E5AEE /* UKTextDocGoToBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UKTextDocGoToBox.h; path = "../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.h"; sourceTree = SOURCE_ROOT; };
+		A8EE3CFF12715D74006E5AEE /* UKTextDocGoToBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UKTextDocGoToBox.m; path = "../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.m"; sourceTree = SOURCE_ROOT; };
+		A8EE3D2612716272006E5AEE /* Syntax Definitions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Syntax Definitions"; sourceTree = "<group>"; };
+		A8EE3D541271649D006E5AEE /* NSArray+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Color.h"; path = "../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.h"; sourceTree = SOURCE_ROOT; };
+		A8EE3D551271649D006E5AEE /* NSArray+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Color.m"; path = "../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.m"; sourceTree = SOURCE_ROOT; };
+		A8EE3DC51271EEAE006E5AEE /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		A8EE3E171272049B006E5AEE /* jewel-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jewel-green.png"; sourceTree = "<group>"; };
+		A8EE3E181272049B006E5AEE /* jewel-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jewel-red.png"; sourceTree = "<group>"; };
+		A8EE3E191272049B006E5AEE /* jewel-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jewel-yellow.png"; sourceTree = "<group>"; };
+		A8EE3ED912722AE5006E5AEE /* NSScanner+SkipUpToCharset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScanner+SkipUpToCharset.h"; sourceTree = "<group>"; };
+		A8EE3EDA12722AE5006E5AEE /* NSScanner+SkipUpToCharset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSScanner+SkipUpToCharset.m"; sourceTree = "<group>"; };
+		A8EE3F0012722C97006E5AEE /* NoodleLineNumberMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberMarker.h; sourceTree = "<group>"; };
+		A8EE3F0112722C97006E5AEE /* NoodleLineNumberMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberMarker.m; sourceTree = "<group>"; };
+		A8EE3F0212722C97006E5AEE /* NoodleLineNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberView.h; sourceTree = "<group>"; };
+		A8EE3F0312722C97006E5AEE /* NoodleLineNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberView.m; sourceTree = "<group>"; };
+		A8EE3F3512722ED9006E5AEE /* NoodleLineNumberScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberScrollView.h; sourceTree = "<group>"; };
+		A8EE3F3612722ED9006E5AEE /* NoodleLineNumberScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberScrollView.m; sourceTree = "<group>"; };
+		A8EE3F3A12722F4E006E5AEE /* NoodleLineNumberingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberingTextView.h; sourceTree = "<group>"; };
+		A8EE3F3B12722F4E006E5AEE /* NoodleLineNumberingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberingTextView.m; sourceTree = "<group>"; };
+		A8EE43761276034C006E5AEE /* default.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = default.cs; sourceTree = "<group>"; };
+		A8EE437712760382006E5AEE /* default.boo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = default.boo; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				16BA96310A7EB9AC001E4983 /* Quartz.framework in Frameworks */,
+				A84BA20D126DF51D00AADF42 /* Mono.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* Quartz Composer Plug In */ = {
+			isa = PBXGroup;
+			children = (
+				A8EE3DC51271EEAE006E5AEE /* README.markdown */,
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = "Quartz Composer Plug In";
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16BA96300A7EB9AC001E4983 /* Quartz.framework */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+				A84BA20C126DF51D00AADF42 /* Mono.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A8EE437712760382006E5AEE /* default.boo */,
+				A8EE3E171272049B006E5AEE /* jewel-green.png */,
+				A8EE3E181272049B006E5AEE /* jewel-red.png */,
+				A8EE3E191272049B006E5AEE /* jewel-yellow.png */,
+				A8EE3D2612716272006E5AEE /* Syntax Definitions */,
+				A8EE2851126E521F006E5AEE /* helloworld.exe */,
+				A8EE263A126E4B2C006E5AEE /* mscorlib.dll */,
+				7238D5500DB6988600E9A42D /* Settings.xib */,
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				A8EE43761276034C006E5AEE /* default.cs */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A8EE3F3012722E03006E5AEE /* Line Numbering */,
+				A8EE3CB8127158D9006E5AEE /* UKSyntaxColoredDocument */,
+				A8EE254D126E2AD3006E5AEE /* MonoUtils.h */,
+				A8EE254E126E2AD3006E5AEE /* MonoUtils.m */,
+				16BA95400A7EB2EB001E4983 /* QCMonoPlugIn.h */,
+				16BA95410A7EB2EB001E4983 /* QCMonoPlugIn.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* QCMono.plugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				16AA5C440A7EEE7300888E31 /* QCMono_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		A8EE3CB8127158D9006E5AEE /* UKSyntaxColoredDocument */ = {
+			isa = PBXGroup;
+			children = (
+				A8EE3CEC12715AA3006E5AEE /* UKSyntaxColoredTextViewController.h */,
+				A8EE3CED12715AA3006E5AEE /* UKSyntaxColoredTextViewController.m */,
+				A8EE3CEE12715AA3006E5AEE /* UKSyntaxColoredTextDocument.h */,
+				A8EE3CEF12715AA3006E5AEE /* UKSyntaxColoredTextDocument.m */,
+				A8EE3CF012715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.h */,
+				A8EE3CF112715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.m */,
+				A8EE3CF912715D60006E5AEE /* NSMenu+DeepSearch.h */,
+				A8EE3CFA12715D60006E5AEE /* NSMenu+DeepSearch.m */,
+				A8EE3CFE12715D74006E5AEE /* UKTextDocGoToBox.h */,
+				A8EE3CFF12715D74006E5AEE /* UKTextDocGoToBox.m */,
+				A8EE3D541271649D006E5AEE /* NSArray+Color.h */,
+				A8EE3D551271649D006E5AEE /* NSArray+Color.m */,
+				A8EE3ED912722AE5006E5AEE /* NSScanner+SkipUpToCharset.h */,
+				A8EE3EDA12722AE5006E5AEE /* NSScanner+SkipUpToCharset.m */,
+			);
+			name = UKSyntaxColoredDocument;
+			sourceTree = "<group>";
+		};
+		A8EE3F3012722E03006E5AEE /* Line Numbering */ = {
+			isa = PBXGroup;
+			children = (
+				A8EE3F0012722C97006E5AEE /* NoodleLineNumberMarker.h */,
+				A8EE3F0112722C97006E5AEE /* NoodleLineNumberMarker.m */,
+				A8EE3F0212722C97006E5AEE /* NoodleLineNumberView.h */,
+				A8EE3F0312722C97006E5AEE /* NoodleLineNumberView.m */,
+				A8EE3F3512722ED9006E5AEE /* NoodleLineNumberScrollView.h */,
+				A8EE3F3612722ED9006E5AEE /* NoodleLineNumberScrollView.m */,
+				A8EE3F3A12722F4E006E5AEE /* NoodleLineNumberingTextView.h */,
+				A8EE3F3B12722F4E006E5AEE /* NoodleLineNumberingTextView.m */,
+			);
+			name = "Line Numbering";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* QCMono */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "QCMono" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QCMono;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = "Quartz Composer Plug In";
+			productReference = 8D5B49B6048680CD000E48DA /* QCMono.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "QCMono" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* Quartz Composer Plug In */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* QCMono */,
+				233E2C640A83C768005A62DF /* Build & Copy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7238D5520DB6988600E9A42D /* Settings.xib in Resources */,
+				A8EE2852126E521F006E5AEE /* helloworld.exe in Resources */,
+				A8EE3D2B12716272006E5AEE /* Syntax Definitions in Resources */,
+				A8EE3DC61271EEAE006E5AEE /* README.markdown in Resources */,
+				A8EE3E1A1272049B006E5AEE /* jewel-green.png in Resources */,
+				A8EE3E1B1272049B006E5AEE /* jewel-red.png in Resources */,
+				A8EE3E1C1272049B006E5AEE /* jewel-yellow.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		233E2C690A83C783005A62DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This shell script simply copies the built plug-in to \"~/Library/Graphics/Quartz Composer Plug-Ins\" and overrides any previous version at that location\n\nmkdir -p \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins\"\nrm -rf \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins/QCMono.plugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/QCMono.plugin\" \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16BA95420A7EB2EB001E4983 /* QCMonoPlugIn.m in Sources */,
+				A8EE254F126E2AD3006E5AEE /* MonoUtils.m in Sources */,
+				A8EE3CF212715AA3006E5AEE /* UKSyntaxColoredTextViewController.m in Sources */,
+				A8EE3CF312715AA3006E5AEE /* UKSyntaxColoredTextDocument.m in Sources */,
+				A8EE3CF412715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.m in Sources */,
+				A8EE3CFB12715D60006E5AEE /* NSMenu+DeepSearch.m in Sources */,
+				A8EE3D0012715D74006E5AEE /* UKTextDocGoToBox.m in Sources */,
+				A8EE3D561271649D006E5AEE /* NSArray+Color.m in Sources */,
+				A8EE3EDB12722AE5006E5AEE /* NSScanner+SkipUpToCharset.m in Sources */,
+				A8EE3F0412722C97006E5AEE /* NoodleLineNumberMarker.m in Sources */,
+				A8EE3F0512722C97006E5AEE /* NoodleLineNumberView.m in Sources */,
+				A8EE3F3712722ED9006E5AEE /* NoodleLineNumberScrollView.m in Sources */,
+				A8EE3F3C12722F4E006E5AEE /* NoodleLineNumberingTextView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		233E2C660A83C76D005A62DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D5B49AC048680CD000E48DA /* QCMono */;
+			targetProxy = 233E2C650A83C76D005A62DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7238D5500DB6988600E9A42D /* Settings.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7238D5510DB6988600E9A42D /* English */,
+			);
+			name = Settings.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = QCMono_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0",
+					"/Library/Frameworks/Mono.framework/Headers/mono-2.0/\nMono.framework/Headers/mono-2.0/",
+					/Library/Frameworks/Mono.framework/Headers,
+					"/Library/Frameworks/Mono.framework\n",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Graphics/Quartz Composer Plug-Ins";
+				PRODUCT_NAME = QCMono;
+				WRAPPER_EXTENSION = plugin;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = QCMono_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0",
+					"/Library/Frameworks/Mono.framework/Headers/mono-2.0/\nMono.framework/Headers/mono-2.0/",
+					/Library/Frameworks/Mono.framework/Headers,
+					/Library/Frameworks/Mono.framework,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Graphics/Quartz Composer Plug-Ins";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = QCMono;
+				VALID_ARCHS = i386;
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/sw/include/glib-2.0/",
+					"/Library/Frameworks/Mono.framework/Headers/mono-2.0/\n",
+				);
+				LD_DYLIB_INSTALL_NAME = "@loader_path/../Libraries/InitMono.dylib";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-D_XOPEN_SOURCE",
+					"-DPLATFORM_MACOSX",
+					"-DUSE_MMAP",
+					"-DUSE_MUNMAP",
+					"-DGC_MACOSX_THREADS",
+					"-DGetCurrentProcess=MonoGetCurrentProcess",
+					"-DCreateEvent=MonoCreateEvent",
+					"-DGetCurrentThread=MonoGetCurrentThread",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0",
+					"-D_THREAD_SAFE",
+					"-D_REENTRANT",
+					"-I/Library/Frameworks/Mono.framework/Headers/mono-2.0\n",
+				);
+				OTHER_LDFLAGS = (
+					"-pthread",
+					"-L/Library/Frameworks/Mono.framework/Versions/Current/lib",
+					"-lpthread",
+					"-lm",
+					"-lgthread-2.0",
+					"-lglib-2.0",
+					"-lintl",
+					"-rpath@loader_path/../Libraries\n",
+				);
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/sw/include/glib-2.0/",
+					"/Library/Frameworks/Mono.framework/Headers/mono-2.0/\nMono.framework/Headers/mono-2.0/",
+				);
+				LD_DYLIB_INSTALL_NAME = "@loader_path/../Libraries/InitMono.dylib";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-D_XOPEN_SOURCE",
+					"-DPLATFORM_MACOSX",
+					"-DUSE_MMAP",
+					"-DUSE_MUNMAP",
+					"-DGC_MACOSX_THREADS",
+					"-DGetCurrentProcess=MonoGetCurrentProcess",
+					"-DCreateEvent=MonoCreateEvent",
+					"-DGetCurrentThread=MonoGetCurrentThread",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0",
+					"-D_THREAD_SAFE",
+					"-D_REENTRANT",
+					"-I/Library/Frameworks/Mono.framework/Headers/mono-2.0",
+				);
+				OTHER_LDFLAGS = (
+					"-pthread",
+					"-L/Library/Frameworks/Mono.framework/Versions/Current/lib",
+					"-lpthread",
+					"-lm",
+					"-lgthread-2.0",
+					"-lglib-2.0",
+					"-lintl",
+					"-rpath@loader_path/../Libraries",
+				);
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		233E2D8A0A83C7AC005A62DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "Build & Install";
+			};
+			name = Debug;
+		};
+		233E2D8B0A83C7AC005A62DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "Build & Install";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "QCMono" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "QCMono" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		233E2D890A83C7AC005A62DF /* Build configuration list for PBXAggregateTarget "Build & Copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				233E2D8A0A83C7AC005A62DF /* Debug */,
+				233E2D8B0A83C7AC005A62DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
