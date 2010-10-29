@@ -33,9 +33,7 @@
 		A8EE3CF312715AA3006E5AEE /* UKSyntaxColoredTextDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3CEF12715AA3006E5AEE /* UKSyntaxColoredTextDocument.m */; };
 		A8EE3CF412715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3CF112715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.m */; };
 		A8EE3CFB12715D60006E5AEE /* NSMenu+DeepSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3CFA12715D60006E5AEE /* NSMenu+DeepSearch.m */; };
-		A8EE3D0012715D74006E5AEE /* UKTextDocGoToBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3CFF12715D74006E5AEE /* UKTextDocGoToBox.m */; };
 		A8EE3D2B12716272006E5AEE /* Syntax Definitions in Resources */ = {isa = PBXBuildFile; fileRef = A8EE3D2612716272006E5AEE /* Syntax Definitions */; };
-		A8EE3D561271649D006E5AEE /* NSArray+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3D551271649D006E5AEE /* NSArray+Color.m */; };
 		A8EE3DC61271EEAE006E5AEE /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = A8EE3DC51271EEAE006E5AEE /* README.markdown */; };
 		A8EE3E1A1272049B006E5AEE /* jewel-green.png in Resources */ = {isa = PBXBuildFile; fileRef = A8EE3E171272049B006E5AEE /* jewel-green.png */; };
 		A8EE3E1B1272049B006E5AEE /* jewel-red.png in Resources */ = {isa = PBXBuildFile; fileRef = A8EE3E181272049B006E5AEE /* jewel-red.png */; };
@@ -67,6 +65,10 @@
 		8D5B49B6048680CD000E48DA /* QCMono.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QCMono.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A84BA20C126DF51D00AADF42 /* Mono.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mono.framework; path = Library/Frameworks/Mono.framework; sourceTree = SDKROOT; };
+		A8C438F9127A8D01000934FE /* UKTextDocGoToBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKTextDocGoToBox.h; sourceTree = "<group>"; };
+		A8C438FA127A8D01000934FE /* UKTextDocGoToBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKTextDocGoToBox.m; sourceTree = "<group>"; };
+		A8C438FB127A8D01000934FE /* NSArray+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Color.h"; sourceTree = "<group>"; };
+		A8C438FC127A8D01000934FE /* NSArray+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Color.m"; sourceTree = "<group>"; };
 		A8EE254D126E2AD3006E5AEE /* MonoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonoUtils.h; sourceTree = "<group>"; };
 		A8EE254E126E2AD3006E5AEE /* MonoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonoUtils.m; sourceTree = "<group>"; };
 		A8EE263A126E4B2C006E5AEE /* mscorlib.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = mscorlib.dll; path = /Library/Frameworks/Mono.framework/Versions/2.8/lib/mono/2.0/mscorlib.dll; sourceTree = "<absolute>"; };
@@ -79,11 +81,7 @@
 		A8EE3CF112715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKMultiSyntaxColoredTextDocument.m; sourceTree = "<group>"; };
 		A8EE3CF912715D60006E5AEE /* NSMenu+DeepSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMenu+DeepSearch.h"; sourceTree = "<group>"; };
 		A8EE3CFA12715D60006E5AEE /* NSMenu+DeepSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMenu+DeepSearch.m"; sourceTree = "<group>"; };
-		A8EE3CFE12715D74006E5AEE /* UKTextDocGoToBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UKTextDocGoToBox.h; path = "../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.h"; sourceTree = SOURCE_ROOT; };
-		A8EE3CFF12715D74006E5AEE /* UKTextDocGoToBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UKTextDocGoToBox.m; path = "../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.m"; sourceTree = SOURCE_ROOT; };
 		A8EE3D2612716272006E5AEE /* Syntax Definitions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Syntax Definitions"; sourceTree = "<group>"; };
-		A8EE3D541271649D006E5AEE /* NSArray+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Color.h"; path = "../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.h"; sourceTree = SOURCE_ROOT; };
-		A8EE3D551271649D006E5AEE /* NSArray+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Color.m"; path = "../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.m"; sourceTree = SOURCE_ROOT; };
 		A8EE3DC51271EEAE006E5AEE /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		A8EE3E171272049B006E5AEE /* jewel-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jewel-green.png"; sourceTree = "<group>"; };
 		A8EE3E181272049B006E5AEE /* jewel-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jewel-red.png"; sourceTree = "<group>"; };
@@ -196,10 +194,10 @@
 				A8EE3CF112715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.m */,
 				A8EE3CF912715D60006E5AEE /* NSMenu+DeepSearch.h */,
 				A8EE3CFA12715D60006E5AEE /* NSMenu+DeepSearch.m */,
-				A8EE3CFE12715D74006E5AEE /* UKTextDocGoToBox.h */,
-				A8EE3CFF12715D74006E5AEE /* UKTextDocGoToBox.m */,
-				A8EE3D541271649D006E5AEE /* NSArray+Color.h */,
-				A8EE3D551271649D006E5AEE /* NSArray+Color.m */,
+				A8C438F9127A8D01000934FE /* UKTextDocGoToBox.h */,
+				A8C438FA127A8D01000934FE /* UKTextDocGoToBox.m */,
+				A8C438FB127A8D01000934FE /* NSArray+Color.h */,
+				A8C438FC127A8D01000934FE /* NSArray+Color.m */,
 				A8EE3ED912722AE5006E5AEE /* NSScanner+SkipUpToCharset.h */,
 				A8EE3EDA12722AE5006E5AEE /* NSScanner+SkipUpToCharset.m */,
 			);
@@ -304,8 +302,6 @@
 				A8EE3CF312715AA3006E5AEE /* UKSyntaxColoredTextDocument.m in Sources */,
 				A8EE3CF412715AA3006E5AEE /* UKMultiSyntaxColoredTextDocument.m in Sources */,
 				A8EE3CFB12715D60006E5AEE /* NSMenu+DeepSearch.m in Sources */,
-				A8EE3D0012715D74006E5AEE /* UKTextDocGoToBox.m in Sources */,
-				A8EE3D561271649D006E5AEE /* NSArray+Color.m in Sources */,
 				A8EE3EDB12722AE5006E5AEE /* NSScanner+SkipUpToCharset.m in Sources */,
 				A8EE3F0412722C97006E5AEE /* NoodleLineNumberMarker.m in Sources */,
 				A8EE3F0512722C97006E5AEE /* NoodleLineNumberView.m in Sources */,

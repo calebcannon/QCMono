@@ -1,0 +1,734 @@
+TQCMono
+v7
+r0
+t310022124.316859
+cCheck dependencies
+cProcessInfoPlistFile /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Info.plist Info.plist
+cCompileXIB /Users/calebcannon/Documents/Projects/QCMono/English.lproj/Settings.xib
+cCpResource build/Debug/QCMono.plugin/Contents/Resources/helloworld.exe helloworld.exe
+cCpResource "build/Debug/QCMono.plugin/Contents/Resources/Syntax Definitions" "Syntax Definitions"
+cCpResource build/Debug/QCMono.plugin/Contents/Resources/README.markdown README.markdown
+cCpResource build/Debug/QCMono.plugin/Contents/Resources/jewel-green.png jewel-green.png
+cCpResource build/Debug/QCMono.plugin/Contents/Resources/jewel-red.png jewel-red.png
+cCpResource build/Debug/QCMono.plugin/Contents/Resources/jewel-yellow.png jewel-yellow.png
+cProcessPCH /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch.gch QCMono_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/QCMonoPlugIn.o /Users/calebcannon/Documents/Projects/QCMono/QCMonoPlugIn.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/MonoUtils.o /Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKSyntaxColoredTextViewController.o /Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKSyntaxColoredTextDocument.o /Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKMultiSyntaxColoredTextDocument.o /Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSMenu+DeepSearch.o /Users/calebcannon/Documents/Projects/QCMono/NSMenu+DeepSearch.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSScanner+SkipUpToCharset.o /Users/calebcannon/Documents/Projects/QCMono/NSScanner+SkipUpToCharset.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberMarker.o /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberMarker.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberView.o /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberScrollView.o /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberScrollView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberingTextView.o /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberingTextView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/MacOS/QCMono normal i386
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004B99A23900000000000000EE
+t1268359737
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Mono
+c000000004CAE2C220000000000878FF4
+t1286482978
+s8884212
+
+N/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0/mono/jit/jit.h
+c000000004CAE149F00000000000005E8
+t1286476959
+s1512
+
+N/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0/mono/metadata/assembly.h
+c000000004CAE14980000000000001447
+t1286476952
+s5191
+
+N/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0/mono/metadata/blob.h
+c000000004CAE14980000000000000CCF
+t1286476952
+s3279
+
+N/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0/mono/metadata/mono-config.h
+c000000004CAE149800000000000002D3
+t1286476952
+s723
+
+N/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0/mono/metadata/mono-debug.h
+c000000004CAE149800000000000015BC
+t1286476952
+s5564
+
+N/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0/mono/utils/mono-logger.h
+c000000004CAE14940000000000000109
+t1286476948
+s265
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004B447F4E00000000000013E6
+t1262780238
+s5094
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/OpenGL.framework/Headers/CGLMacro.h
+c000000004B824D23000000000001FFC8
+t1266830627
+s131016
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Quartz.framework/Headers/Quartz.h
+c000000004AC482290000000000000124
+t1254392361
+s292
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/tgmath.h
+c000000004AC32665000000000000220C
+t1254303333
+s8716
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004A1F2D63000000000000A5E0
+t1243557219
+s42464
+
+N/System/Library/Frameworks/Quartz.framework/Quartz
+c000000004A1249D4000000000000A5F0
+t1242712532
+s42480
+
+N/Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.h
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.m
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.h
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.m
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/calebcannon/Documents/Projects/QCMono/English.lproj/Settings.xib
+c000000004CCA5247000000000001198F
+t1288327751
+s72079
+
+N/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.h
+c000000004CCA52470000000000000755
+t1288327751
+s1877
+i<Cocoa/Cocoa.h>
+i<Quartz/Quartz.h>
+i<mono/jit/jit.h>
+i<mono/metadata/assembly.h>
+i<mono/metadata/blob.h>
+i<mono/metadata/mono-config.h>
+i<mono/metadata/mono-debug.h>
+i<mono/utils/mono-logger.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m
+c000000004CCA524700000000000028E8
+t1288327751
+s10472
+i"MonoUtils.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/NSArray+Color.h
+c000000004BA3337C00000000000007BA
+t1268986748
+s1978
+i<Foundation/Foundation.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/NSMenu+DeepSearch.h
+c000000004CCA524700000000000007B1
+t1288327751
+s1969
+i<Foundation/Foundation.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/NSMenu+DeepSearch.m
+c000000004CCA5247000000000000099A
+t1288327751
+s2458
+i"NSMenu+DeepSearch.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/NSScanner+SkipUpToCharset.h
+c000000004CCA5247000000000000049C
+t1288327751
+s1180
+i<Foundation/Foundation.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/NSScanner+SkipUpToCharset.m
+c000000004CCA52470000000000000276
+t1288327751
+s630
+i"NSScanner+SkipUpToCharset.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberMarker.h
+c000000004CCA524700000000000006BE
+t1288327751
+s1726
+i<Cocoa/Cocoa.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberMarker.m
+c000000004CCA52470000000000000A3C
+t1288327751
+s2620
+i"NoodleLineNumberMarker.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberScrollView.h
+c000000004CCA524700000000000000EF
+t1288327751
+s239
+i<Cocoa/Cocoa.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberScrollView.m
+c000000004CCA52470000000000000381
+t1288327751
+s897
+i"NoodleLineNumberScrollView.h"
+i"NoodleLineNumberView.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberView.h
+c000000004CCA524700000000000008DE
+t1288327751
+s2270
+i<Cocoa/Cocoa.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberView.m
+c000000004CCA524700000000000040B9
+t1288327751
+s16569
+i"NoodleLineNumberView.h"
+i"NoodleLineNumberMarker.h"
+i<tgmath.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberingTextView.h
+c000000004CCA524700000000000000EF
+t1288327751
+s239
+i<Cocoa/Cocoa.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberingTextView.m
+c000000004CCA5247000000000000012A
+t1288327751
+s298
+i"NoodleLineNumberingTextView.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/QCMonoPlugIn.h
+c000000004CCA524700000000000008E1
+t1288327751
+s2273
+i<Quartz/Quartz.h>
+i<mono/jit/jit.h>
+i<mono/metadata/assembly.h>
+i<mono/metadata/mono-config.h>
+i<mono/metadata/mono-debug.h>
+i<mono/utils/mono-logger.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/QCMonoPlugIn.m
+c000000004CCA5247000000000000698B
+t1288327751
+s27019
+i<OpenGL/CGLMacro.h>
+i"QCMonoPlugIn.h"
+i"MonoUtils.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/QCMono_Prefix.pch
+c000000004CCA52470000000000000032
+t1288327751
+s50
+i<Quartz/Quartz.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/README.markdown
+c000000004CCA5247000000000000056C
+t1288327751
+s1388
+
+N/Users/calebcannon/Documents/Projects/QCMono/Syntax Definitions
+c000000004CCA524700000000000000AA
+t1288327751
+s170
+
+N/Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.h
+c000000004CCA52470000000000001037
+t1288327751
+s4151
+i"UKSyntaxColoredTextDocument.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m
+c000000004CCA524700000000000034DA
+t1288327751
+s13530
+i"UKMultiSyntaxColoredTextDocument.h"
+i"NSMenu+DeepSearch.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextDocument.h
+c000000004CCA52470000000000000CCD
+t1288327751
+s3277
+i<Cocoa/Cocoa.h>
+i"UKTextDocGotoBox.h"
+i"UKSyntaxColoredTextViewController.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextDocument.m
+c000000004CCA5247000000000000262E
+t1288327751
+s9774
+i"UKSyntaxColoredTextDocument.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextViewController.h
+c000000004CCA52470000000000001628
+t1288327751
+s5672
+i<Cocoa/Cocoa.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextViewController.m
+c000000004CCA5247000000000000AF04
+t1288327751
+s44804
+i"UKSyntaxColoredTextViewController.h"
+i"NSArray+Color.h"
+i"NSScanner+SkipUpToCharset.h"
+
+N/Users/calebcannon/Documents/Projects/QCMono/UKTextDocGoToBox.h
+c000000004BA3337C00000000000009DD
+t1268986748
+s2525
+i<Cocoa/Cocoa.h>
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin
+t2
+s0
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Info.plist
+t1288329310
+s834
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/MacOS/QCMono
+t2
+s0
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources/English.lproj/Settings.nib
+t1288329312
+s15565
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources/README.markdown
+t1288329311
+s1388
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources/Syntax Definitions
+t1288329311
+s170
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources/helloworld.exe
+t1288329311
+s3072
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources/jewel-green.png
+t1288329311
+s703
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources/jewel-red.png
+t1288329311
+s807
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources/jewel-yellow.png
+t1288329311
+s617
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/MonoUtils.o
+t1288329323
+s22972
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSArray+Color.o
+t2
+s0
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSMenu+DeepSearch.o
+t1288329323
+s9628
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSScanner+SkipUpToCharset.o
+t1288329323
+s6480
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberMarker.o
+t1288329323
+s21456
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberScrollView.o
+t1288329324
+s19768
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberView.o
+t1288329324
+s59048
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberingTextView.o
+t1288329324
+s12132
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/QCMono.LinkFileList
+c000000004CCA585E0000000000000588
+t1288329310
+s1416
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/QCMonoPlugIn.o
+t1288329323
+s72120
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKMultiSyntaxColoredTextDocument.o
+t1288329323
+s38036
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKSyntaxColoredTextDocument.o
+t1288329323
+s39868
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKSyntaxColoredTextViewController.o
+t1288329323
+s86360
+
+N/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKTextDocGoToBox.o
+t2
+s0
+
+N/Users/calebcannon/Documents/Projects/QCMono/helloworld.exe
+c000000004CCA52470000000000000C00
+t1288327751
+s3072
+
+N/Users/calebcannon/Documents/Projects/QCMono/jewel-green.png
+c000000004CCA524700000000000002BF
+t1288327751
+s703
+
+N/Users/calebcannon/Documents/Projects/QCMono/jewel-red.png
+c000000004CCA52470000000000000327
+t1288327751
+s807
+
+N/Users/calebcannon/Documents/Projects/QCMono/jewel-yellow.png
+c000000004CCA52470000000000000269
+t1288327751
+s617
+
+N/var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-anbftizvuktalpdqllrttmuvyvdr/QCMono_Prefix.pch.gch
+t2
+s0
+
+N/var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch.gch
+t1288329322
+s59106736
+
+NInfo.plist
+c000000004CCA52470000000000000374
+t1288327751
+s884
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies310022110#310022110#0(0"0(0#1#0"4300911832#0"0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/MonoUtils.o /Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022122.519413
+e310022123.059521
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/MonoUtils.o
+x/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m: In function 'mono_get_string_array_from_field':
+o/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m:106: warning: 'return' with no value, in function returning non-void
+lSLF07#2@64"Compile /Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m310022122#310022123#0(232"/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m: In function 'mono_get_string_array_from_field':/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m:106: warning: 'return' with no value, in function returning non-void1(22@54"'return' with no value, in function returning non-void310022122#106#126#0(6@56"/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m310020551#106#0#106#0#54"'return' with no value, in function returning non-void0(0#0#56"/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m4300911832#1859"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/MonoUtils.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSArray+Color.o /Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310021168.625417
+e310021168.633753
+r0
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSArray+Color.o
+x/Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oi686-apple-darwin10-gcc-4.2.1: /Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.m: No such file or directory
+oi686-apple-darwin10-gcc-4.2.1: warning: '-x objective-c' after last input file has no effect
+oi686-apple-darwin10-gcc-4.2.1: no input files
+lSLF07#2@140"Compile /Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.m310021168#310021168#0(389"i686-apple-darwin10-gcc-4.2.1: /Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.m: No such file or directoryi686-apple-darwin10-gcc-4.2.1: warning: '-x objective-c' after last input file has no effecti686-apple-darwin10-gcc-4.2.1: no input filesCommand /Developer/usr/bin/gcc-4.2 failed with exit code 11(4@58"Command /Developer/usr/bin/gcc-4.2 failed with exit code 1310021168#18446744073709551615#0#0(1@0"0(0#0#132"/Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.m4300911832#1939"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/NSArray+Color.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSArray+Color.o1#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSMenu+DeepSearch.o /Users/calebcannon/Documents/Projects/QCMono/NSMenu+DeepSearch.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022123.442277
+e310022123.635142
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSMenu+DeepSearch.o
+x/Users/calebcannon/Documents/Projects/QCMono/NSMenu+DeepSearch.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/calebcannon/Documents/Projects/QCMono/NSMenu+DeepSearch.m310022123#310022123#0(0"0(0#0#64"/Users/calebcannon/Documents/Projects/QCMono/NSMenu+DeepSearch.m4300911832#1875"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/NSMenu+DeepSearch.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSMenu+DeepSearch.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSScanner+SkipUpToCharset.o /Users/calebcannon/Documents/Projects/QCMono/NSScanner+SkipUpToCharset.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022123.635261
+e310022123.864342
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSScanner+SkipUpToCharset.o
+x/Users/calebcannon/Documents/Projects/QCMono/NSScanner+SkipUpToCharset.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@80"Compile /Users/calebcannon/Documents/Projects/QCMono/NSScanner+SkipUpToCharset.m310022123#310022123#0(0"0(0#0#72"/Users/calebcannon/Documents/Projects/QCMono/NSScanner+SkipUpToCharset.m4300911832#1891"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/NSScanner+SkipUpToCharset.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NSScanner+SkipUpToCharset.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberMarker.o /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberMarker.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022123.690196
+e310022123.909525
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberMarker.o
+x/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberMarker.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@77"Compile /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberMarker.m310022123#310022123#0(0"0(0#0#69"/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberMarker.m4300911832#1885"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberMarker.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberMarker.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberScrollView.o /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberScrollView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022123.909801
+e310022124.114385
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberScrollView.o
+x/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberScrollView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@81"Compile /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberScrollView.m310022123#310022124#0(0"0(0#0#73"/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberScrollView.m4300911832#1893"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberScrollView.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberScrollView.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberView.o /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022123.864457
+e310022124.231354
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberView.o
+x/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberView.m310022123#310022124#0(0"0(0#0#67"/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberView.m4300911832#1881"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberView.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberView.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberingTextView.o /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberingTextView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022124.114576
+e310022124.288891
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberingTextView.o
+x/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberingTextView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberingTextView.m310022124#310022124#0(0"0(0#0#74"/Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberingTextView.m4300911832#1895"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/NoodleLineNumberingTextView.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/NoodleLineNumberingTextView.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/QCMonoPlugIn.o /Users/calebcannon/Documents/Projects/QCMono/QCMonoPlugIn.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022122.505334
+e310022123.161744
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/QCMonoPlugIn.o
+x/Users/calebcannon/Documents/Projects/QCMono/QCMonoPlugIn.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/calebcannon/Documents/Projects/QCMono/QCMonoPlugIn.m310022122#310022123#0(0"0(0#0#59"/Users/calebcannon/Documents/Projects/QCMono/QCMonoPlugIn.m4300911832#1865"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/QCMonoPlugIn.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/QCMonoPlugIn.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKMultiSyntaxColoredTextDocument.o /Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022123.441052
+e310022123.690081
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKMultiSyntaxColoredTextDocument.o
+x/Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from /Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m:32:
+o/Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.h:66:2: warning: #warning Please define UKSCTD_APPLICATION_NAME to be a constant NSString containing your app name, so users can rename your application without ill results.
+lSLF07#2@87"Compile /Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m310022123#310022123#0(358"In file included from /Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m:32:/Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.h:66:2: warning: #warning Please define UKSCTD_APPLICATION_NAME to be a constant NSString containing your app name, so users can rename your application without ill results.1(22@156"#warning Please define UKSCTD_APPLICATION_NAME to be a constant NSString containing your app name, so users can rename your application without ill results.310022123#106#252#2(7@101"In file included from /Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m310022123#18446744073709551615#0#0(6@79"/Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m310020551#32#0#32#0#0"0(13@239"#warning Please define UKSCTD_APPLICATION_NAME to be a constant NSString containing your app name, so users can rename your application without ill results. in /Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.h310022123#18446744073709551615#0#0(6@79"/Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.h310020551#66#0#66#0#0"0(6@79"/Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.h310020551#66#0#66#0#10"#warning *0(0#0#79"/Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m4300911832#1905"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/UKMultiSyntaxColoredTextDocument.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKMultiSyntaxColoredTextDocument.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKSyntaxColoredTextDocument.o /Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022123.161855
+e310022123.442193
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKSyntaxColoredTextDocument.o
+x/Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextDocument.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextDocument.m310022123#310022123#0(0"0(0#0#74"/Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextDocument.m4300911832#1895"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextDocument.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKSyntaxColoredTextDocument.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKSyntaxColoredTextViewController.o /Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022123.059633
+e310022123.440945
+r1
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKSyntaxColoredTextViewController.o
+x/Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextViewController.m310022123#310022123#0(0"0(0#0#80"/Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextViewController.m4300911832#1907"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/UKSyntaxColoredTextViewController.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKSyntaxColoredTextViewController.o0#
+
+CCompileC build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKTextDocGoToBox.o /Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s310021168.617262
+e310021168.625312
+r0
+xCompileC
+xbuild/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKTextDocGoToBox.o
+x/Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oi686-apple-darwin10-gcc-4.2.1: /Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.m: No such file or directory
+oi686-apple-darwin10-gcc-4.2.1: warning: '-x objective-c' after last input file has no effect
+oi686-apple-darwin10-gcc-4.2.1: no input files
+lSLF07#2@143"Compile /Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.m310021168#310021168#0(392"i686-apple-darwin10-gcc-4.2.1: /Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.m: No such file or directoryi686-apple-darwin10-gcc-4.2.1: warning: '-x objective-c' after last input file has no effecti686-apple-darwin10-gcc-4.2.1: no input filesCommand /Developer/usr/bin/gcc-4.2 failed with exit code 11(4@58"Command /Developer/usr/bin/gcc-4.2 failed with exit code 1310021168#18446744073709551615#0#0(1@0"0(0#0#135"/Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.m4300911832#1945"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -include /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch -c /Users/calebcannon/Documents/Projects/QCMono/../../../../../Downloads/uliwitness-UKSyntaxColoredTextDocument-0b83819/UKTextDocGoToBox.m -o /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/UKTextDocGoToBox.o1#
+
+CCompileXIB /Users/calebcannon/Documents/Projects/QCMono/English.lproj/Settings.xib
+s310022110.904473
+e310022112.964220
+r1
+xCompileXIB
+x/Users/calebcannon/Documents/Projects/QCMono/English.lproj/Settings.xib
+lSLF07#2@37"CompileXIB English.lproj/Settings.xib310022110#310022112#0(0"0(0#0#71"/Users/calebcannon/Documents/Projects/QCMono/English.lproj/Settings.xib4300911832#347"    cd /Users/calebcannon/Documents/Projects/QCMono    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources/English.lproj/Settings.nib /Users/calebcannon/Documents/Projects/QCMono/English.lproj/Settings.xib0#
+
+CCpResource "build/Debug/QCMono.plugin/Contents/Resources/Syntax Definitions" "Syntax Definitions"
+s310022110.909495
+e310022111.274817
+r1
+xCpResource
+xbuild/Debug/QCMono.plugin/Contents/Resources/Syntax Definitions
+xSyntax Definitions
+lSLF07#2@23"Copy Syntax Definitions310022110#310022111#0(0"0(0#0#63"/Users/calebcannon/Documents/Projects/QCMono/Syntax Definitions4300911832#356"    cd /Users/calebcannon/Documents/Projects/QCMono    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/calebcannon/Documents/Projects/QCMono/Syntax Definitions" /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources0#
+
+CCpResource build/Debug/QCMono.plugin/Contents/Resources/README.markdown README.markdown
+s310022110.910073
+e310022111.211862
+r1
+xCpResource
+xbuild/Debug/QCMono.plugin/Contents/Resources/README.markdown
+xREADME.markdown
+lSLF07#2@20"Copy README.markdown310022110#310022111#0(0"0(0#0#60"/Users/calebcannon/Documents/Projects/QCMono/README.markdown4300911832#351"    cd /Users/calebcannon/Documents/Projects/QCMono    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/calebcannon/Documents/Projects/QCMono/README.markdown /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources0#
+
+CCpResource build/Debug/QCMono.plugin/Contents/Resources/helloworld.exe helloworld.exe
+s310022110.908753
+e310022111.212187
+r1
+xCpResource
+xbuild/Debug/QCMono.plugin/Contents/Resources/helloworld.exe
+xhelloworld.exe
+lSLF07#2@19"Copy helloworld.exe310022110#310022111#0(0"0(0#0#59"/Users/calebcannon/Documents/Projects/QCMono/helloworld.exe4300911832#350"    cd /Users/calebcannon/Documents/Projects/QCMono    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/calebcannon/Documents/Projects/QCMono/helloworld.exe /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources0#
+
+CCpResource build/Debug/QCMono.plugin/Contents/Resources/jewel-green.png jewel-green.png
+s310022110.915659
+e310022111.245969
+r1
+xCpResource
+xbuild/Debug/QCMono.plugin/Contents/Resources/jewel-green.png
+xjewel-green.png
+lSLF07#2@20"Copy jewel-green.png310022110#310022111#0(0"0(0#0#60"/Users/calebcannon/Documents/Projects/QCMono/jewel-green.png4300911832#351"    cd /Users/calebcannon/Documents/Projects/QCMono    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/calebcannon/Documents/Projects/QCMono/jewel-green.png /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources0#
+
+CCpResource build/Debug/QCMono.plugin/Contents/Resources/jewel-red.png jewel-red.png
+s310022110.917579
+e310022111.247111
+r1
+xCpResource
+xbuild/Debug/QCMono.plugin/Contents/Resources/jewel-red.png
+xjewel-red.png
+lSLF07#2@18"Copy jewel-red.png310022110#310022111#0(0"0(0#0#58"/Users/calebcannon/Documents/Projects/QCMono/jewel-red.png4300911832#349"    cd /Users/calebcannon/Documents/Projects/QCMono    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/calebcannon/Documents/Projects/QCMono/jewel-red.png /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources0#
+
+CCpResource build/Debug/QCMono.plugin/Contents/Resources/jewel-yellow.png jewel-yellow.png
+s310022110.918764
+e310022111.228853
+r1
+xCpResource
+xbuild/Debug/QCMono.plugin/Contents/Resources/jewel-yellow.png
+xjewel-yellow.png
+lSLF07#2@21"Copy jewel-yellow.png310022110#310022111#0(0"0(0#0#61"/Users/calebcannon/Documents/Projects/QCMono/jewel-yellow.png4300911832#352"    cd /Users/calebcannon/Documents/Projects/QCMono    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/calebcannon/Documents/Projects/QCMono/jewel-yellow.png /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Resources0#
+
+CLd /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/MacOS/QCMono normal i386
+s310022124.288989
+e310022124.316784
+r0
+xLd
+x/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/MacOS/QCMono
+xnormal
+xi386
+old: in /Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks//Mono.framework/Mono, can't link with a main executable
+ocollect2: ld returned 1 exit status
+lSLF07#2@97"Link /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/MacOS/QCMono310022124#310022124#0(208"ld: in /Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks//Mono.framework/Mono, can't link with a main executablecollect2: ld returned 1 exit statusCommand /Developer/usr/bin/gcc-4.2 failed with exit code 12(13@108"In /Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks//Mono.framework/Mono, can't link with a main executable310022124#0#113#0(6@0"310022124#0#0#0#0#0"0(4@58"Command /Developer/usr/bin/gcc-4.2 failed with exit code 1310022124#18446744073709551615#0#0(1@0"0(0#0#0"4300911832#756"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch i386 -bundle -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/calebcannon/Documents/Projects/QCMono/build/Debug -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -filelist /Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/Objects-normal/i386/QCMono.LinkFileList -mmacosx-version-min=10.6 -pthread -L/Library/Frameworks/Mono.framework/Versions/Current/lib -lpthread -lm -lgthread-2.0 -lglib-2.0 -lintl "-rpath@loader_path/../Libraries" -framework Cocoa -framework Quartz -framework Mono -o /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/MacOS/QCMono1#
+
+CProcessInfoPlistFile /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Info.plist Info.plist
+s310022110.885908
+e310022110.904382
+r1
+xProcessInfoPlistFile
+x/Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist310022110#310022110#0(0"0(0#0#55"/Users/calebcannon/Documents/Projects/QCMono/Info.plist4300911832#224"    cd /Users/calebcannon/Documents/Projects/QCMono    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin/Contents/Info.plist0#
+
+CProcessPCH /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-anbftizvuktalpdqllrttmuvyvdr/QCMono_Prefix.pch.gch QCMono_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s310020750.324592
+e310020755.793973
+r1
+xProcessPCH
+x/var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-anbftizvuktalpdqllrttmuvyvdr/QCMono_Prefix.pch.gch
+xQCMono_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@28"Precompile QCMono_Prefix.pch310020750#310020755#0(0"0(0#0#62"/Users/calebcannon/Documents/Projects/QCMono/QCMono_Prefix.pch4300911832#1692"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -c /Users/calebcannon/Documents/Projects/QCMono/QCMono_Prefix.pch -o /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-anbftizvuktalpdqllrttmuvyvdr/QCMono_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch.gch QCMono_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s310022112.964430
+e310022122.504919
+r1
+xProcessPCH
+x/var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch.gch
+xQCMono_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@28"Precompile QCMono_Prefix.pch310022112#310022122#0(0"0(0#0#62"/Users/calebcannon/Documents/Projects/QCMono/QCMono_Prefix.pch4300911832#1752"    cd /Users/calebcannon/Documents/Projects/QCMono    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/QCMono.hmap -F/Users/calebcannon/Documents/Projects/QCMono/build/Debug -I/Users/calebcannon/Documents/Projects/QCMono/build/Debug/include -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Versions/2.8/include/mono-2.0 "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0/Mono.framework/Headers/mono-2.0" -I/Developer/SDKs/MacOSX10.6.sdk/Library/Frameworks/Mono.framework/Headers "-I/Library/Frameworks/Mono.framework" -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources/i386 -I/Users/calebcannon/Documents/Projects/QCMono/build/QCMono.build/Debug/QCMono.build/DerivedSources -D_XOPEN_SOURCE -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP -DGC_MACOSX_THREADS -DGetCurrentProcess=MonoGetCurrentProcess -DCreateEvent=MonoCreateEvent -DGetCurrentThread=MonoGetCurrentThread -I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include -I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0 -D_THREAD_SAFE -D_REENTRANT "-I/Library/Frameworks/Mono.framework/Headers/mono-2.0" -c /Users/calebcannon/Documents/Projects/QCMono/QCMono_Prefix.pch -o /var/folders/+v/+vPOQLwcH3GP75uZvk8Q0E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/QCMono_Prefix-dqwajddvhmdvjrdapucksiqbkztp/QCMono_Prefix.pch.gch0#
+
+CTouch /Users/calebcannon/Documents/Projects/QCMono/build/Debug/QCMono.plugin
+r0
+
