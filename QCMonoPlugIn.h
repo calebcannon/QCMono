@@ -50,10 +50,11 @@ extern void mono_mkbundle_init();
 	
 	BOOL needsCompile;
 	
-	NSInteger selectedCompilerTag;
+	NSInteger selectedCompilerIndex;
 }
 
-@property (nonatomic, assign) NSInteger selectedCompilerTag;	
+@property (nonatomic, assign) NSInteger selectedCompilerIndex;	
+@property (nonatomic, readonly) NSArray *compilerNames;
 
 @property (nonatomic, retain) NSString *consoleText;
 @property (nonatomic, retain) NSString *scriptSourceCode;
@@ -69,7 +70,12 @@ extern void mono_mkbundle_init();
 // Private method declared here to prevent compiler warnings
 - (id) patch;
 
+- (NSDictionary *)compilerInfo;
+- (NSArray *)compilerNames;
+
 - (void) synchPorts;
+- (void) synchInputPorts;
+- (void) synchOutputPorts;
 - (BOOL) loadMonoImageData;
 - (void) cleanupMono;
 - (BOOL) compileAndLoadMonoScript;

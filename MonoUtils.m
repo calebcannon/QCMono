@@ -9,78 +9,6 @@
 
 #include "MonoUtils.h"
 
-NSNumber *mono_get_number_from_int16_field(MonoObject *object, MonoClassField *field)
-{
-	int i;
-	mono_field_get_value(object, field, &i);
-	
-	return [NSNumber numberWithInt:i];
-}
-
-NSNumber *mono_get_number_from_uint16_field(MonoObject *object, MonoClassField *field)
-{
-	unsigned int i;
-	mono_field_get_value(object, field, &i);
-	
-	return [NSNumber numberWithInt:i];
-}
-
-NSNumber *mono_get_number_from_int32_field(MonoObject *object, MonoClassField *field)
-{
-	int i;
-	mono_field_get_value(object, field, &i);
-	
-	return [NSNumber numberWithInt:i];
-}
-
-NSNumber *mono_get_number_from_uint32_field(MonoObject *object, MonoClassField *field)
-{
-	unsigned int i;
-	mono_field_get_value(object, field, &i);
-	
-	return [NSNumber numberWithInt:i];
-}
-
-NSNumber *mono_get_number_from_int64_field(MonoObject *object, MonoClassField *field)
-{
-	int i;
-	mono_field_get_value(object, field, &i);
-	
-	return [NSNumber numberWithInt:i];
-}
-
-NSNumber *mono_get_number_from_uint64_field(MonoObject *object, MonoClassField *field)
-{
-	unsigned int i;
-	mono_field_get_value(object, field, &i);
-	
-	return [NSNumber numberWithInt:i];
-}
-
-NSNumber *mono_get_number_from_boolean_field(MonoObject *object, MonoClassField *field)
-{
-	MonoObject *box = mono_field_get_value_object(mono_domain_get(), field, object);
-	BOOL b = ((BOOL *)mono_object_unbox(box))[0];
-	
-	return [NSNumber numberWithBool:b];
-}
-
-NSNumber *mono_get_number_from_single_field(MonoObject *object, MonoClassField *field)
-{
-	float f;
-	mono_field_get_value(object, field, &f);
-	
-	return [NSNumber numberWithFloat:f];
-}
-
-NSNumber *mono_get_number_from_double_field(MonoObject *object, MonoClassField *field)
-{
-	double d;
-	mono_field_get_value(object, field, &d);
-	
-	return [NSNumber numberWithDouble:d];
-}
-
 NSString *mono_get_string_from_string_field(MonoObject *object, MonoClassField *field)
 {
 	MonoString *string = nil;
@@ -103,7 +31,7 @@ NSArray *mono_get_string_array_from_field(MonoObject *object, MonoClassField *fi
 	mono_field_get_value(object, field, &array);
 	
 	if (array == nil)
-		return;
+		return nil;
 	
 	unsigned int elements = mono_array_length(array);
 	unsigned int i;
@@ -128,14 +56,41 @@ NSDictionary *mono_get_array_from_field(MonoObject *object, MonoClassField *fiel
 	MonoArray *array = nil;
 	mono_field_get_value(object, field, &array);
 
-	return mono_get_foundation_array_from_array(array);
+	return mono_get_foundation_dictionary_from_array(array);
 }
 
-NSDictionary *mono_get_foundation_array_from_array(MonoArray *array)
+NSArray *mono_get_foundation_array_from_array(MonoArray *array)
 {
 	if (array == nil)
 		return nil;
 	
+	mono_get_array_class(array);
+	MonoArrayType *arrayType = mono_type_get_array_type(array);
+	
+	NSMutableArray *nsarray = [NSMutableArray array];
+	
+	unsigned int elements = mono_array_length(array);
+	unsigned int i;
+	for (i = 0; i < elements; i++)
+	{
+		MonoObject *arrayObject = mono_array_get(array, MonoObject *, i);
+		id foundationObject = mono_get_foundation_object_from_object(arrayObject);
+		
+		if (foundationObject == nil)
+			break;
+		
+
+		[nsarray addObject:foundationObject];
+	}
+	
+	return nsarray;
+}
+
+NSDictionary *mono_get_foundation_dictionary_from_array(MonoArray *array)
+{
+	if (array == nil)
+		return nil;
+		
 	NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
 	
 	unsigned int elements = mono_array_length(array);
@@ -145,10 +100,33 @@ NSDictionary *mono_get_foundation_array_from_array(MonoArray *array)
 		MonoObject *arrayObject = mono_array_get(array, MonoObject *, i);
 		id foundationObject = mono_get_foundation_object_from_object(arrayObject);
 		
-		if (foundationObject != nil)
+		if (foundationObject == nil)
+			break;
+		
+		else
 			[dictionary setObject:foundationObject
 						   forKey:[NSString stringWithFormat:@"%i", [dictionary count]]];
-	}	
+	}
+	
+	return dictionary;
+}
+
+NSDictionary *mono_get_foundation_dictionary_from_dictionary(MonoObject *array)
+{
+	if (array == nil)
+		return nil;
+	
+	NSLog(@"Getting Dictionary");
+		
+	MonoObject *keyArrayObject = mono_array_get(array, MonoObject *, 0);
+	NSArray *keys = mono_get_foundation_array_from_array(keyArrayObject);
+	NSLog(@"Keys: %@", keys);
+	
+	MonoObject *valueArrayObject = mono_array_get(array, MonoObject *, 1);
+	NSArray *values  = mono_get_foundation_array_from_array(valueArrayObject);
+	NSLog(@"Values: %@", values);
+
+	NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:values forKeys:keys];
 	
 	return dictionary;
 }
@@ -158,24 +136,47 @@ id mono_get_foundation_object_from_object(MonoObject *object)
 {	
 	if (object == nil)
 		return nil;
-	
+
 	MonoClass *class = mono_object_get_class(object);
 	MonoType *type = mono_class_get_type(class);
 	int type_type = mono_type_get_type(type);
 	const char *class_name = mono_class_get_name(class);
 	
-	if (strcmp(class_name, "System.String") == 0)
-	{
-		MonoString *string = (MonoString *)object;
-		char *buff = mono_string_to_utf8(string);
-		return [NSString stringWithUTF8String:buff];
-	}
+	NSLog(@"Class name: %s", class_name);
 	
 	void *value;
+
+	if (mono_type_is_byref(type))
+		NSLog(@"Type is byref");
+	else 
+		NSLog(@"Type is NOT byref");
+	
 	if (mono_type_is_pointer(type))
+	{
+		NSLog(@"Type is pointer");
 		value = object;
-	else
+	}
+	else if (mono_type_is_struct(type))
+	{
+		NSLog(@"Type is struct");
 		value = mono_object_unbox(object);
+	}
+	else if (mono_type_is_void(type))
+	{
+		NSLog(@"Type is void");
+		value = mono_object_unbox(object);
+	}
+	else if (mono_type_is_reference(type))
+	{
+		NSLog(@"Type is reference");
+		//return nil;
+		value = object;
+	}
+	else {
+		NSLog(@"Type is unknown");
+		value = mono_object_unbox(object);
+	}
+
 	
 	switch (type_type) {
 		case MONO_TYPE_END:
@@ -217,15 +218,21 @@ id mono_get_foundation_object_from_object(MonoObject *object)
 			return [NSNumber numberWithDouble:*(double *)value];
 			
 		case MONO_TYPE_STRING:
-			return [NSString stringWithUTF8String:mono_string_to_utf8((MonoString *)object)];
+		{
+			MonoString *string = (MonoString *)object;
+			char *buff = mono_string_to_utf8(string);
+			return [NSString stringWithUTF8String:buff];
 			
+			return [NSString stringWithUTF8String:mono_string_to_utf8((MonoString *)object)];
+		}			
 		case MONO_TYPE_PTR:
 		case MONO_TYPE_BYREF:
 		case MONO_TYPE_VALUETYPE:
 		case MONO_TYPE_CLASS:
 		case MONO_TYPE_VAR:
 		case MONO_TYPE_ARRAY:
-			return mono_get_foundation_array_from_array((MonoArray *)object);
+			NSLog(@"Type is array");
+			return mono_get_foundation_dictionary_from_array((MonoArray *)object);
 		
 		case MONO_TYPE_GENERICINST:
 		case MONO_TYPE_TYPEDBYREF:
@@ -234,7 +241,11 @@ id mono_get_foundation_object_from_object(MonoObject *object)
 		case MONO_TYPE_FNPTR:
 		case MONO_TYPE_OBJECT:
 		case MONO_TYPE_SZARRAY:
-			return mono_get_foundation_array_from_array((MonoArray *)object);
+			NSLog(@"Type is szarray");
+			if (strstr(class_name, "Dictionary") != nil)
+				return mono_get_foundation_dictionary_from_dictionary(object);
+			else
+				return mono_get_foundation_dictionary_from_array((MonoArray *)object);
 
 		case MONO_TYPE_MVAR:
 		case MONO_TYPE_CMOD_REQD:

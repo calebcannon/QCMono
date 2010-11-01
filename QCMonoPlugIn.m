@@ -14,19 +14,21 @@
 
 NSInteger CompilerCSharp;
 
-
-#define CompilerCSharp 1000
-#define CompilerBoo 1001
-
-
-
 #define	kQCPlugIn_Name				@"QCMono"
 #define	kQCPlugIn_Description		@"This patch executes a script using the Mono IL framework with an arbitrary number of input / output parameters.  Currently supported languages are C# and Boo.  The Mono framework must be installed on the machine running the composition in order for the patch to work.  Each script must declare a \"Script\" class with a public function \"main()\" as an entry point.  Class variables beginning with \"input\" and \"output\" will be mapped to input and output ports in the Quartz Composer patch."
 
 // Keys used for saving and loading serialized values
 #define kScriptSourceCode			@"scriptSourceCode"
 #define kMonoImageData				@"monoImageData"
-#define kSelectedCompilerTag		@"selectedCompilerTag"
+#define kSelectedCompilerIndex		@"selectedCompilerIndex"
+#define kInputPortDescriptions		@"inputPortDescriptions"
+#define kOutputPortDescriptions		@"outputPortDescriptions"
+
+// Keys used by the compiler info dictionary / plist
+#define kCompilerCommand			@"compileCommand"
+#define kCompilerName				@"name"
+#define kCompilerSyntaxDefinitionFile @"syntaxDefinitionFile"
+
 
 // Keys used in the port descriptions dictionaries
 #define kQCPortType					@"QCPortTypeKey"
@@ -36,10 +38,10 @@ NSInteger CompilerCSharp;
 @implementation QCMonoPlugIn
 
 
-@synthesize selectedCompilerTag;
+@synthesize selectedCompilerIndex;
+@dynamic compilerNames;
 @synthesize compilerError, compilerWarning, compilerOK, compiling;
-@synthesize scriptSourceCode;
-@synthesize monoImageData;
+@synthesize scriptSourceCode, monoImageData;
 @synthesize consoleText;
 @dynamic attributedScriptSourceCode;
 
@@ -63,7 +65,19 @@ NSInteger CompilerCSharp;
 	return kQCPlugInTimeModeNone;
 }
 
+- (NSDictionary *)compilerInfo
+{
+	NSString *compilerInfoFilepath = [[NSBundle bundleForClass:[self class]] pathForResource:@"compilers" ofType:@"plist"];
+	NSArray *compilerInfo = [NSArray arrayWithContentsOfFile:compilerInfoFilepath];
+	return [compilerInfo objectAtIndex:selectedCompilerIndex];
+}
 
+- (NSArray *)compilerNames
+{
+	NSString *compilerInfoFilepath = [[NSBundle bundleForClass:[self class]] pathForResource:@"compilers" ofType:@"plist"];
+	NSArray *compilerInfo = [NSArray arrayWithContentsOfFile:compilerInfoFilepath];
+	return [compilerInfo valueForKey:@"name"];
+}
 
 
 - (NSArray *) sortedPropertyPortKeys
@@ -92,7 +106,8 @@ NSInteger CompilerCSharp;
 			scriptSourceCode = nil;
 			needsCompile = NO;
 		}
-		selectedCompilerTag = CompilerCSharp;
+		
+		selectedCompilerIndex = 0;
 	}
 	
 	return self;
@@ -112,7 +127,7 @@ NSInteger CompilerCSharp;
 
 + (NSArray*) plugInKeys
 {
-	return [NSArray arrayWithObjects:kScriptSourceCode, kMonoImageData, kSelectedCompilerTag, nil];
+	return [NSArray arrayWithObjects:kScriptSourceCode, kMonoImageData, kInputPortDescriptions, kOutputPortDescriptions, kSelectedCompilerIndex, nil];
 }
 
 - (id) serializedValueForKey:(NSString*)key;
@@ -123,8 +138,15 @@ NSInteger CompilerCSharp;
 	else if ([key isEqualToString:kMonoImageData])
 		return self.monoImageData;
 	
-	else if ([key isEqualToString:kSelectedCompilerTag])
-		return [NSNumber numberWithInt:selectedCompilerTag];
+	else if ([key isEqualToString:kSelectedCompilerIndex])
+		return [NSNumber numberWithInt:selectedCompilerIndex];
+
+	else if ([key isEqualToString:kInputPortDescriptions])
+		
+		return inputPortDescriptions;
+	
+	else if ([key isEqualToString:kOutputPortDescriptions])
+		return outputPortDescriptions;
 	
 	else
 		return [super serializedValueForKey:key];
@@ -136,10 +158,26 @@ NSInteger CompilerCSharp;
 		self.scriptSourceCode = serializedValue;
 	
 	else if ([key isEqualToString:kMonoImageData])
+	{
 		self.monoImageData = serializedValue;
+	}
 	
-	else if ([key isEqualToString:kSelectedCompilerTag])
-		self.selectedCompilerTag = [serializedValue intValue];
+	else if ([key isEqualToString:kInputPortDescriptions])
+	{
+		[inputPortDescriptions release];
+		inputPortDescriptions = [serializedValue retain];
+		[self synchInputPorts];
+	}
+
+	else if ([key isEqualToString:kOutputPortDescriptions])
+	{
+		[outputPortDescriptions release];
+		outputPortDescriptions = [serializedValue retain];
+		[self synchOutputPorts];
+	}
+
+	else if ([key isEqualToString:kSelectedCompilerIndex])
+		self.selectedCompilerIndex = [serializedValue intValue];
 	
 	else
 		[super setSerializedValue:serializedValue forKey:key];
@@ -162,6 +200,8 @@ NSInteger CompilerCSharp;
 // the user types a character.
 - (void) startCompileTimer
 {			
+	NSLog(@"Start comp");
+
   	if (!needsCompile)
 	{
 		needsCompile = YES;
@@ -171,7 +211,7 @@ NSInteger CompilerCSharp;
 	if (compileTimer)
 		[compileTimer invalidate];
 	
-	const double compileTimeInterval = 1.0;
+	const double compileTimeInterval = 3.0;
 	compileTimer = [NSTimer scheduledTimerWithTimeInterval:compileTimeInterval
 													target:self
 												  selector:@selector(compileTimerFired)
@@ -183,7 +223,6 @@ NSInteger CompilerCSharp;
 {
 	compileTimer = nil;
 	[self compileAndLoadMonoScript];
-	[self createInputPortsForScriptFields];
 }	
 
 - (void) setScriptSourceCode:(NSString *)source
@@ -194,10 +233,9 @@ NSInteger CompilerCSharp;
 	[self startCompileTimer];
 }
 
-- (void) setSelectedCompilerTag:(NSInteger)tag
+- (void) setSelectedCompilerIndex:(NSInteger)index
 {
-	selectedCompilerTag = tag;
-	
+	selectedCompilerIndex = index;
 	[self startCompileTimer];
 }
 
@@ -361,24 +399,18 @@ NSInteger CompilerCSharp;
 	
 	// Create an execute the compilation task
 	NSTask *compileTask = [[NSTask alloc] init];
-	NSString *compileArgument;
+	NSString *compileCommand;
 	
-	switch (self.selectedCompilerTag) 
-	{
-		case CompilerBoo:
-			// I would like to let users declare inputs & outputs IB style, e.g. "public input int MyInput" would produce an input port
-			compileArgument = [NSString stringWithFormat:@"booc -target:library -o:%@ %@", destFilePath, sourceFilePath];
-			break;
-		default: // CSharp
-			compileArgument = [NSString stringWithFormat:@"gmcs %@ -target:library -d:input -d:output -out:%@", sourceFilePath, destFilePath];			
-	}
+	NSDictionary *compilerInfo = [self compilerInfo];
+	compileCommand = [compilerInfo objectForKey:kCompilerCommand];
+	compileCommand = [compileCommand stringByReplacingOccurrencesOfString:@"%sourcefilepath%" withString:sourceFilePath];
+	compileCommand = [compileCommand stringByReplacingOccurrencesOfString:@"%destfilepath%" withString:destFilePath];
 	
-
 	//NSLog(@"Args:%@", compileArguments);
 	NSArray *compileArguments = [NSArray arrayWithObjects:
 								 @"-l",
 								 @"-c",
-								 compileArgument,
+								 compileCommand,
 								 nil];
 	
 	[compileTask setLaunchPath:@"/bin/bash"];
@@ -491,6 +523,12 @@ NSInteger CompilerCSharp;
 
 - (void) synchPorts
 {
+	[self synchInputPorts];
+	[self synchOutputPorts];
+}
+
+- (void) synchInputPorts
+{
 	for (NSDictionary *portDescription in inputPortDescriptions)
 	{
 		NSString *portType = [portDescription objectForKey:kQCPortType];
@@ -498,7 +536,10 @@ NSInteger CompilerCSharp;
 		NSDictionary *portAttributes = [portDescription objectForKey:kQCPortAttributes];
 		[self addMonoInputPortWithType:portType forKey:portKey withAttributes:portAttributes];
 	}
-	
+}
+
+- (void) synchOutputPorts
+{
 	for (NSDictionary *portDescription in outputPortDescriptions)
 	{
 		NSString *portType = [portDescription objectForKey:kQCPortType];
@@ -510,6 +551,8 @@ NSInteger CompilerCSharp;
 
 - (void) createInputPortsForScriptFields
 {
+	NSLog(@"createInputPortsForScriptFields");
+	
 	if (monoScriptClass == nil || monoScriptObject == nil)
 		return;
 	
@@ -812,6 +855,7 @@ NSInteger CompilerCSharp;
 		if ([fieldName length] > 6 && [fieldName hasPrefix:@"output"])
 		{
 			field_type_name = mono_type_get_name(field_type);
+			NSLog(@"Update Output %@: %s", fieldName, field_type_name);
 			fieldValue = nil;
 			
 			field_object = mono_field_get_value_object(mono_domain_get(), field, monoScriptObject);
@@ -858,7 +902,7 @@ NSInteger CompilerCSharp;
 
 	// If an exception was raised, write the details to standard out and raise an NSException
 	if (exc != nil) {
-
+		
 		mono_print_unhandled_exception (exc);
 		NSString *exceptionString = @"Exception raised in Mono invocation method.  See console for details";
 		NSException *exception = [NSException exceptionWithName:@"Unhandled Exception" reason:exceptionString userInfo:nil];

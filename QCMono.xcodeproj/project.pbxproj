@@ -27,6 +27,10 @@
 		7238D5520DB6988600E9A42D /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7238D5500DB6988600E9A42D /* Settings.xib */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		A84BA20D126DF51D00AADF42 /* Mono.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84BA20C126DF51D00AADF42 /* Mono.framework */; };
+		A881461B127C977900FFE3DD /* NSArray+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C438FC127A8D01000934FE /* NSArray+Color.m */; };
+		A881461C127C978600FFE3DD /* UKTextDocGoToBox.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C438FA127A8D01000934FE /* UKTextDocGoToBox.m */; };
+		A8814642127C99DA00FFE3DD /* QCMonoMultiSyntaxColoredTextDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = A881462E127C984100FFE3DD /* QCMonoMultiSyntaxColoredTextDocument.m */; };
+		A881468D127C9F3D00FFE3DD /* compilers.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8814652127C9A9C00FFE3DD /* compilers.plist */; };
 		A8EE254F126E2AD3006E5AEE /* MonoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE254E126E2AD3006E5AEE /* MonoUtils.m */; };
 		A8EE2852126E521F006E5AEE /* helloworld.exe in Resources */ = {isa = PBXBuildFile; fileRef = A8EE2851126E521F006E5AEE /* helloworld.exe */; };
 		A8EE3CF212715AA3006E5AEE /* UKSyntaxColoredTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE3CED12715AA3006E5AEE /* UKSyntaxColoredTextViewController.m */; };
@@ -65,6 +69,9 @@
 		8D5B49B6048680CD000E48DA /* QCMono.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QCMono.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A84BA20C126DF51D00AADF42 /* Mono.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mono.framework; path = Library/Frameworks/Mono.framework; sourceTree = SDKROOT; };
+		A881462D127C984100FFE3DD /* QCMonoMultiSyntaxColoredTextDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCMonoMultiSyntaxColoredTextDocument.h; sourceTree = "<group>"; };
+		A881462E127C984100FFE3DD /* QCMonoMultiSyntaxColoredTextDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCMonoMultiSyntaxColoredTextDocument.m; sourceTree = "<group>"; };
+		A8814652127C9A9C00FFE3DD /* compilers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = compilers.plist; sourceTree = "<group>"; };
 		A8C438F9127A8D01000934FE /* UKTextDocGoToBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKTextDocGoToBox.h; sourceTree = "<group>"; };
 		A8C438FA127A8D01000934FE /* UKTextDocGoToBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKTextDocGoToBox.m; sourceTree = "<group>"; };
 		A8C438FB127A8D01000934FE /* NSArray+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Color.h"; sourceTree = "<group>"; };
@@ -150,6 +157,7 @@
 				7238D5500DB6988600E9A42D /* Settings.xib */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				A8EE43761276034C006E5AEE /* default.cs */,
+				A8814652127C9A9C00FFE3DD /* compilers.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -163,6 +171,8 @@
 				A8EE254E126E2AD3006E5AEE /* MonoUtils.m */,
 				16BA95400A7EB2EB001E4983 /* QCMonoPlugIn.h */,
 				16BA95410A7EB2EB001E4983 /* QCMonoPlugIn.m */,
+				A881462D127C984100FFE3DD /* QCMonoMultiSyntaxColoredTextDocument.h */,
+				A881462E127C984100FFE3DD /* QCMonoMultiSyntaxColoredTextDocument.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -270,6 +280,7 @@
 				A8EE3E1A1272049B006E5AEE /* jewel-green.png in Resources */,
 				A8EE3E1B1272049B006E5AEE /* jewel-red.png in Resources */,
 				A8EE3E1C1272049B006E5AEE /* jewel-yellow.png in Resources */,
+				A881468D127C9F3D00FFE3DD /* compilers.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +318,9 @@
 				A8EE3F0512722C97006E5AEE /* NoodleLineNumberView.m in Sources */,
 				A8EE3F3712722ED9006E5AEE /* NoodleLineNumberScrollView.m in Sources */,
 				A8EE3F3C12722F4E006E5AEE /* NoodleLineNumberingTextView.m in Sources */,
+				A881461B127C977900FFE3DD /* NSArray+Color.m in Sources */,
+				A881461C127C978600FFE3DD /* UKTextDocGoToBox.m in Sources */,
+				A8814642127C99DA00FFE3DD /* QCMonoMultiSyntaxColoredTextDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

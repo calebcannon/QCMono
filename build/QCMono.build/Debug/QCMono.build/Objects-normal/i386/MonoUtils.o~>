@@ -1,0 +1,28 @@
+/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m: In function 'mono_get_foundation_array_from_array':
+/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m:67: error: too many arguments to function 'mono_get_array_class'
+/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m:68: warning: passing argument 1 of 'mono_type_get_array_type' from incompatible pointer type
+/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m:68: warning: unused variable 'arrayType'
+/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m: In function 'mono_get_foundation_dictionary_from_dictionary':
+/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m:121: warning: passing argument 1 of 'mono_array_addr_with_size' from incompatible pointer type
+/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m:122: warning: passing argument 1 of 'mono_get_foundation_array_from_array' from incompatible pointer type
+/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m:125: warning: passing argument 1 of 'mono_array_addr_with_size' from incompatible pointer type
+/Users/calebcannon/Documents/Projects/QCMono/MonoUtils.m:126: warning: passing argument 1 of 'mono_get_foundation_array_from_array' from incompatible pointer type
+{standard input}:190:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_2" minus "L00000000002$pb"
+{standard input}:190:symbol: "L_OBJC_SELECTOR_REFERENCES_2" can't be undefined in a subtraction expression
+{standard input}:179:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_0" minus "L00000000002$pb"
+{standard input}:179:symbol: "L_OBJC_SELECTOR_REFERENCES_0" can't be undefined in a subtraction expression
+{standard input}:176:non-relocatable subtraction expression, "L_OBJC_CLASS_REFERENCES_0" minus "L00000000002$pb"
+{standard input}:176:symbol: "L_OBJC_CLASS_REFERENCES_0" can't be undefined in a subtraction expression
+{standard input}:124:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_1" minus "L00000000002$pb"
+{standard input}:124:symbol: "L_OBJC_SELECTOR_REFERENCES_1" can't be undefined in a subtraction expression
+{standard input}:121:non-relocatable subtraction expression, "L_OBJC_CLASS_REFERENCES_1" minus "L00000000002$pb"
+{standard input}:121:symbol: "L_OBJC_CLASS_REFERENCES_1" can't be undefined in a subtraction expression
+{standard input}:82:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_0" minus "L00000000001$pb"
+{standard input}:82:symbol: "L_OBJC_SELECTOR_REFERENCES_0" can't be undefined in a subtraction expression
+{standard input}:79:non-relocatable subtraction expression, "L_OBJC_CLASS_REFERENCES_0" minus "L00000000001$pb"
+{standard input}:79:symbol: "L_OBJC_CLASS_REFERENCES_0" can't be undefined in a subtraction expression
+{standard input}:unknown:Undefined local symbol L_OBJC_CLASS_REFERENCES_0
+{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_0
+{standard input}:unknown:Undefined local symbol L_OBJC_CLASS_REFERENCES_1
+{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_1
+{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_2

@@ -18,15 +18,6 @@
 #include <mono/metadata/mono-debug.h>
 #include <mono/utils/mono-logger.h>
 
-
-
-NSNumber *mono_get_number_from_int16_field(MonoObject *object, MonoClassField *field);
-NSNumber *mono_get_number_from_uint16_field(MonoObject *object, MonoClassField *field);
-NSNumber *mono_get_number_from_int32_field(MonoObject *object, MonoClassField *field);
-NSNumber *mono_get_number_from_uint32_field(MonoObject *object, MonoClassField *field);
-NSNumber *mono_get_number_from_int64_field(MonoObject *object, MonoClassField *field);
-NSNumber *mono_get_number_from_uint64_field(MonoObject *object, MonoClassField *field);
-
 NSNumber *mono_get_number_from_boolean_field(MonoObject *object, MonoClassField *field);
 NSNumber *mono_get_number_from_single_field(MonoObject *object, MonoClassField *field);
 NSNumber *mono_get_number_from_double_field(MonoObject *object, MonoClassField *field);
@@ -34,7 +25,8 @@ NSString *mono_get_string_from_string_field(MonoObject *object, MonoClassField *
 
 NSArray *mono_get_string_array_from_field(MonoObject *object, MonoClassField *field);
 NSDictionary *mono_get_array_from_field(MonoObject *object, MonoClassField *field);
-NSDictionary *mono_get_foundation_array_from_array(MonoArray *array);
+NSDictionary *mono_get_foundation_dictionary_from_array(MonoArray *array);
+NSArray *mono_get_foundation_array_from_array(MonoArray *array);
 id mono_get_foundation_object_from_object(MonoObject *object);
 
 MonoArray *mono_array_create_from_dictionary(MonoDomain *domain, NSDictionary *dict);
