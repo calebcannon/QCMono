@@ -9,19 +9,8 @@
 
 #include "MonoUtils.h"
 
-NSString *mono_get_string_from_string_field(MonoObject *object, MonoClassField *field)
-{
-	MonoString *string = nil;
-	mono_field_get_value(object, field, &string);
-	char *buff = mono_string_to_utf8(string);
-	
-	if (buff == nil)
-		return nil;
-	
-	return [NSString stringWithUTF8String:buff];
-}
 
-NSArray *mono_get_string_array_from_field(MonoObject *object, MonoClassField *field)
+NSArray *qcm_get_string_array_from_field(MonoObject *object, MonoClassField *field)
 {
 	NSArray *result = [NSArray array];
 	
@@ -51,21 +40,17 @@ NSArray *mono_get_string_array_from_field(MonoObject *object, MonoClassField *fi
 	return result;
 }
 
-NSDictionary *mono_get_array_from_field(MonoObject *object, MonoClassField *field)
+NSDictionary *qcm_get_array_from_field(MonoObject *object, MonoClassField *field)
 {
 	MonoArray *array = nil;
 	mono_field_get_value(object, field, &array);
-
-	return mono_get_foundation_dictionary_from_array(array);
+	return qcm_get_foundation_dictionary_from_array(array);
 }
 
-NSArray *mono_get_foundation_array_from_array(MonoArray *array)
+NSArray *qcm_get_foundation_array_from_array(MonoArray *array)
 {
 	if (array == nil)
 		return nil;
-	
-	mono_get_array_class(array);
-	MonoArrayType *arrayType = mono_type_get_array_type(array);
 	
 	NSMutableArray *nsarray = [NSMutableArray array];
 	
@@ -86,7 +71,7 @@ NSArray *mono_get_foundation_array_from_array(MonoArray *array)
 	return nsarray;
 }
 
-NSDictionary *mono_get_foundation_dictionary_from_array(MonoArray *array)
+NSDictionary *qcm_get_foundation_dictionary_from_array(MonoArray *array)
 {
 	if (array == nil)
 		return nil;
@@ -111,20 +96,19 @@ NSDictionary *mono_get_foundation_dictionary_from_array(MonoArray *array)
 	return dictionary;
 }
 
-NSDictionary *mono_get_foundation_dictionary_from_dictionary(MonoObject *array)
+NSDictionary *mono_get_foundation_dictionary_from_dictionary(MonoArray *array)
 {
 	if (array == nil)
 		return nil;
-	
-	NSLog(@"Getting Dictionary");
-		
+
+	// Dictionaries are returned from Mono as a two dimensional array of arrays: MonoArray *array[2][n] 
+	// Fetching them and converting them to NSDictionaries this way seems hackish.
+
 	MonoObject *keyArrayObject = mono_array_get(array, MonoObject *, 0);
-	NSArray *keys = mono_get_foundation_array_from_array(keyArrayObject);
-	NSLog(@"Keys: %@", keys);
+	NSArray *keys = qcm_get_foundation_array_from_array((MonoArray *)keyArrayObject);
 	
 	MonoObject *valueArrayObject = mono_array_get(array, MonoObject *, 1);
-	NSArray *values  = mono_get_foundation_array_from_array(valueArrayObject);
-	NSLog(@"Values: %@", values);
+	NSArray *values  = qcm_get_foundation_array_from_array((MonoArray *)valueArrayObject);
 
 	NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:values forKeys:keys];
 	
@@ -142,10 +126,9 @@ id mono_get_foundation_object_from_object(MonoObject *object)
 	int type_type = mono_type_get_type(type);
 	const char *class_name = mono_class_get_name(class);
 	
-	NSLog(@"Class name: %s", class_name);
-	
 	void *value;
 
+	// TODO: fix me
 	if (mono_type_is_byref(type))
 		NSLog(@"Type is byref");
 	else 
@@ -153,32 +136,29 @@ id mono_get_foundation_object_from_object(MonoObject *object)
 	
 	if (mono_type_is_pointer(type))
 	{
-		NSLog(@"Type is pointer");
 		value = object;
 	}
 	else if (mono_type_is_struct(type))
 	{
-		NSLog(@"Type is struct");
 		value = mono_object_unbox(object);
 	}
 	else if (mono_type_is_void(type))
 	{
-		NSLog(@"Type is void");
 		value = mono_object_unbox(object);
 	}
 	else if (mono_type_is_reference(type))
 	{
-		NSLog(@"Type is reference");
-		//return nil;
 		value = object;
 	}
-	else {
+	else 
+	{
 		NSLog(@"Type is unknown");
 		value = mono_object_unbox(object);
 	}
 
 	
-	switch (type_type) {
+	switch (type_type) 
+	{
 		case MONO_TYPE_END:
 		case MONO_TYPE_VOID:
 		case MONO_TYPE_BOOLEAN:
@@ -225,14 +205,14 @@ id mono_get_foundation_object_from_object(MonoObject *object)
 			
 			return [NSString stringWithUTF8String:mono_string_to_utf8((MonoString *)object)];
 		}			
+		
 		case MONO_TYPE_PTR:
 		case MONO_TYPE_BYREF:
 		case MONO_TYPE_VALUETYPE:
 		case MONO_TYPE_CLASS:
 		case MONO_TYPE_VAR:
 		case MONO_TYPE_ARRAY:
-			NSLog(@"Type is array");
-			return mono_get_foundation_dictionary_from_array((MonoArray *)object);
+			return qcm_get_foundation_dictionary_from_array((MonoArray *)object);
 		
 		case MONO_TYPE_GENERICINST:
 		case MONO_TYPE_TYPEDBYREF:
@@ -241,11 +221,10 @@ id mono_get_foundation_object_from_object(MonoObject *object)
 		case MONO_TYPE_FNPTR:
 		case MONO_TYPE_OBJECT:
 		case MONO_TYPE_SZARRAY:
-			NSLog(@"Type is szarray");
 			if (strstr(class_name, "Dictionary") != nil)
-				return mono_get_foundation_dictionary_from_dictionary(object);
+				return mono_get_foundation_dictionary_from_dictionary((MonoArray *)object);
 			else
-				return mono_get_foundation_dictionary_from_array((MonoArray *)object);
+				return qcm_get_foundation_dictionary_from_array((MonoArray *)object);
 
 		case MONO_TYPE_MVAR:
 		case MONO_TYPE_CMOD_REQD:
@@ -264,33 +243,54 @@ id mono_get_foundation_object_from_object(MonoObject *object)
 }
 
 
-MonoArray *mono_array_create_from_dictionary(MonoDomain *domain, NSDictionary *aDictionary)
-{
-	MonoArray *array = mono_array_new(domain, mono_get_object_class(), [aDictionary count]);
+MonoArray *qcm_array_create_from_dictionary(MonoDomain *domain, NSDictionary *aDictionary)
+{	
+	MonoArray *array;
 	
-	for (int i = 0; i < [aDictionary count]; i++)
+	if (aDictionary && [aDictionary isKindOfClass:[NSDictionary class]])
 	{
-		MonoObject *object = mono_object_from_foundation_object(domain, [[aDictionary allValues] objectAtIndex:i]);
-		mono_array_set(array, MonoObject *, i, object);
+		array = mono_array_new(domain, mono_get_object_class(), [aDictionary count]);
+		
+		for (int i = 0; i < [aDictionary count]; i++)
+		{
+			MonoObject *object = qcm_object_from_foundation_object(domain, [[aDictionary allValues] objectAtIndex:i]);
+			mono_array_set(array, MonoObject *, i, object);
+		}
 	}
+	else {
+		// Create an empty array
+		array = mono_array_new(domain, mono_get_object_class(), 0);
+	}
+	
 	
 	return array;
 }
 
-MonoArray *mono_array_create_from_array(MonoDomain *domain, NSArray *anArray)
+MonoArray *qcm_array_create_from_array(MonoDomain *domain, NSArray *anArray)
 {
-	MonoArray *array = mono_array_new(domain, mono_get_object_class(), [anArray count]);
+	MonoArray *array;
 	
-	for (int i = 0; i < [anArray count]; i++)
-	{
-		MonoObject *object = mono_object_from_foundation_object(domain, [anArray objectAtIndex:i]);
-		mono_array_set(array, MonoObject *, i, object);
+	if (anArray && [anArray isKindOfClass:[NSArray class]])
+	{	
+		array = mono_array_new(domain, mono_get_object_class(), [anArray count]);
+		
+		for (int i = 0; i < [anArray count]; i++)
+		{
+			MonoObject *object = qcm_object_from_foundation_object(domain, [anArray objectAtIndex:i]);
+			mono_array_set(array, MonoObject *, i, object);
+		}
 	}
+	else 
+	{
+		// Create an empty array
+		array = mono_array_new(domain, mono_get_object_class(), 0);
+	}
+	
 	
 	return array;
 }
 
-MonoObject *mono_object_from_foundation_object(MonoDomain *domain, id object)
+MonoObject *qcm_object_from_foundation_object(MonoDomain *domain, id object)
 {
 	if ([object isKindOfClass:[NSNumber class]])
 	{
@@ -309,23 +309,24 @@ MonoObject *mono_object_from_foundation_object(MonoDomain *domain, id object)
 	else if ([object isKindOfClass:[NSDictionary class]])
 	{
 		NSDictionary *dict = (NSDictionary *)object;
-		MonoArray *object = mono_array_create_from_dictionary(domain, dict);
+		MonoArray *object = qcm_array_create_from_dictionary(domain, dict);
 		return (MonoObject *)object;
 	}
 
 	else if ([object isKindOfClass:[NSArray class]])
 	{
 		NSArray *array = (NSArray *)object;
-		MonoArray *object = mono_array_create_from_array(domain, array);
+		MonoArray *object = qcm_array_create_from_array(domain, array);
 		return (MonoObject *)object;
 	}
 	
 	return nil;
 }
 
-NSString *mono_get_qcport_type_for_type(int type)
+NSString *qcm_get_qcport_type_for_type(int type)
 {	
-	switch (type) {
+	switch (type) 
+	{
 		case MONO_TYPE_END:
 		case MONO_TYPE_VOID:
 		case MONO_TYPE_BOOLEAN:
@@ -391,61 +392,7 @@ NSString *mono_get_qcport_type_for_type(int type)
 		case MONO_TYPE_ENUM:
 		default:
 			return nil;
-	}
-	
-	// NOTE: I would prefer that this be a case statement.  There are type identifiers but
-	// I don't know how to get them from the field object
-	/*
-	if (strcmp(field_type_name, "System.Int16") == 0)
-	{		
-		
-	}
-	else if (strcmp(field_type_name, "System.UInt16") == 0)
-	{		
-		portType = QCPortTypeIndex;
-	}
-	else if (strcmp(field_type_name, "System.Int32") == 0)
-	{		
-		portType = QCPortTypeIndex;
-	}
-	else if (strcmp(field_type_name, "System.UInt32") == 0)
-	{		
-		portType = QCPortTypeIndex;
-	}
-	else if (strcmp(field_type_name, "System.Int64") == 0)
-	{		
-		portType = QCPortTypeIndex;
-	}
-	else if (strcmp(field_type_name, "System.UInt64") == 0)
-	{		
-		portType = QCPortTypeIndex;
-	}
-	else if (strcmp(field_type_name, "System.Boolean") == 0)
-	{
-		portType = QCPortTypeBoolean;
-	}
-	else if (strcmp(field_type_name, "System.Single") == 0)
-	{				
-		portType = QCPortTypeNumber;
-	}
-	else if (strcmp(field_type_name, "System.Double") == 0)
-	{				
-		portType = QCPortTypeNumber;
-	}
-	else if (strcmp(field_type_name, "System.String") == 0)
-	{
-		portType = QCPortTypeString;
-	}
-	else if (strcmp(field_type_name, "System.Object[]") == 0)
-	{
-		portType = QCPortTypeStructure;
-	}
-	else if (strcmp(field_type_name, "System.String[]") == 0)
-	{
-		portType = QCPortTypeStructure;
-	}
-	 */
-	
+	}	
 }
 
 

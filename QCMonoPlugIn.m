@@ -29,7 +29,6 @@ NSInteger CompilerCSharp;
 #define kCompilerName				@"name"
 #define kCompilerSyntaxDefinitionFile @"syntaxDefinitionFile"
 
-
 // Keys used in the port descriptions dictionaries
 #define kQCPortType					@"QCPortTypeKey"
 #define kQCPortKey					@"QCPortKey"
@@ -104,7 +103,7 @@ NSInteger CompilerCSharp;
 		{
 			// Something went wrong loading the default script ... forget about it
 			scriptSourceCode = nil;
-			needsCompile = NO;
+			shouldCompile = NO;
 		}
 		
 		selectedCompilerIndex = 0;
@@ -116,7 +115,7 @@ NSInteger CompilerCSharp;
 - (void) finalize
 {
 	[self cleanupMono];
-
+	
 	[super finalize];
 }
 
@@ -140,7 +139,7 @@ NSInteger CompilerCSharp;
 	
 	else if ([key isEqualToString:kSelectedCompilerIndex])
 		return [NSNumber numberWithInt:selectedCompilerIndex];
-
+	
 	else if ([key isEqualToString:kInputPortDescriptions])
 		
 		return inputPortDescriptions;
@@ -168,14 +167,14 @@ NSInteger CompilerCSharp;
 		inputPortDescriptions = [serializedValue retain];
 		[self synchInputPorts];
 	}
-
+	
 	else if ([key isEqualToString:kOutputPortDescriptions])
 	{
 		[outputPortDescriptions release];
 		outputPortDescriptions = [serializedValue retain];
 		[self synchOutputPorts];
 	}
-
+	
 	else if ([key isEqualToString:kSelectedCompilerIndex])
 		self.selectedCompilerIndex = [serializedValue intValue];
 	
@@ -186,9 +185,9 @@ NSInteger CompilerCSharp;
 - (QCPlugInViewController*) createViewController
 {
 	/*
-	Return a new QCPlugInViewController to edit the internal settings of this plug-in instance.
-	You can return a subclass of QCPlugInViewController if necessary.
-	*/
+	 Return a new QCPlugInViewController to edit the internal settings of this plug-in instance.
+	 You can return a subclass of QCPlugInViewController if necessary.
+	 */
 	
 	return [[QCPlugInViewController alloc] initWithPlugIn:self viewNibName:@"Settings"];
 }
@@ -200,11 +199,9 @@ NSInteger CompilerCSharp;
 // the user types a character.
 - (void) startCompileTimer
 {			
-	NSLog(@"Start comp");
-
-  	if (!needsCompile)
+  	if (!shouldCompile)
 	{
-		needsCompile = YES;
+		shouldCompile = YES;
 		return;
 	}
 	
@@ -225,6 +222,7 @@ NSInteger CompilerCSharp;
 	[self compileAndLoadMonoScript];
 }	
 
+// Override the accessor so that the source is automatically compiled a short time after updating
 - (void) setScriptSourceCode:(NSString *)source
 {
 	[scriptSourceCode release];
@@ -233,12 +231,16 @@ NSInteger CompilerCSharp;
 	[self startCompileTimer];
 }
 
+// Override the accessor so that the source is automatically compiled a short time after updating
 - (void) setSelectedCompilerIndex:(NSInteger)index
 {
 	selectedCompilerIndex = index;
 	[self startCompileTimer];
 }
 
+// NSTextView bindings are for attributed strings.  These are present to
+// make binding the NSTextView attributed string to the (ordinary) string
+// soruce code possible
 - (void) setAttributedScriptSourceCode:(NSAttributedString *)attributedString
 {
 	self.scriptSourceCode = [attributedString string];
@@ -252,6 +254,7 @@ NSInteger CompilerCSharp;
 	return nil;
 }
 
+// When a new image is available load it into the mono runtime
 - (void) setMonoImageData:(NSData *)data
 {
 	[monoImageData release];
@@ -263,6 +266,7 @@ NSInteger CompilerCSharp;
 #pragma mark -
 #pragma mark Mono support
 
+// Prints a message to the console and the 'log' view in the editor
 - (void) logMessage:(NSString *)message, ...
 {
 	va_list args;
@@ -272,16 +276,18 @@ NSInteger CompilerCSharp;
 	self.consoleText = str;
 }
 
+// Load an image into the mono runtime.  Initializes the runtime if necessary and cleans up old images
 - (BOOL) loadMonoImageData
 {	
 	if (self.monoImageData == nil)
 		return FALSE;
 	
 	MonoImageOpenStatus status;
-
+	
 	// Initialize Mono if no domain can be found
 	MonoDomain *rootMonoDomain = mono_domain_get();
-	if (rootMonoDomain == nil) {
+	if (rootMonoDomain == nil) 
+	{
 		mono_config_parse (nil);
 		NSString *domainName = [NSString stringWithFormat:@"QC Mono Root Domain %p", self];
 		rootMonoDomain = mono_jit_init_version([domainName UTF8String], NULL);
@@ -296,15 +302,15 @@ NSInteger CompilerCSharp;
 	NSString *domainName = [NSString stringWithFormat:@"QC Mono Application Domain %p", self];
 	monoScriptDomain = mono_domain_create_appdomain((char *)[domainName UTF8String], 0);
 	mono_domain_set(monoScriptDomain, 0);
-
+	
 	/*
-	if (monoImage)
-	{
-		mono_image_close(monoImage);
-		monoImage = nil;
-		monoAssembly = nil;
-	}
-	*/
+	 if (monoImage)
+	 {
+	 mono_image_close(monoImage);
+	 monoImage = nil;
+	 monoAssembly = nil;
+	 }
+	 */
 	if (monoObjectGCHandle)
 	{
 		mono_gchandle_free(monoObjectGCHandle);
@@ -320,11 +326,11 @@ NSInteger CompilerCSharp;
 		[self logMessage:@"Could not load image data.  Status: %i", status];
 		return FALSE;
 	}
-
+	
 	// Load the image assembly 
 	monoAssembly = mono_assembly_load_from_full(monoImage, mono_image_get_name(monoImage), &status, ref_only);
-	NSLog(@"Assembly: %p Image: %p Bytes: %p Data: %p", monoAssembly, monoImage, [self.monoImageData bytes], self.monoImageData);
-	if (monoAssembly == nil) {
+	if (monoAssembly == nil) 
+	{
 		[self logMessage:@"Could not load assembly from image.  Status: %i", status];
 		//mono_image_close(monoImage), monoImage = nil;
 		return FALSE;
@@ -332,7 +338,8 @@ NSInteger CompilerCSharp;
 	
 	//image = mono_assembly_get_image (monoAssembly);
 	monoScriptClass = mono_class_from_name (monoImage, "", "Script");
-	if (monoScriptClass == nil) {
+	if (monoScriptClass == nil) 
+	{
 		[self logMessage:@"Could not find a Script class. Scripts must contain a class 'Script' with a public method 'main()' as an entry point."];
 		mono_assembly_close(monoAssembly), monoAssembly = nil;
 		//mono_image_close(monoImage), monoImage = nil;
@@ -340,11 +347,12 @@ NSInteger CompilerCSharp;
 	}	
 	
 	// Why a public method would require these flags but the flags themselves are not exposed is beyond me
-	#define METHOD_ATTRIBUTE_PUBLIC 0x0006
-	#define METHOD_ATTRIBUTE_STATIC 0x0010
-	#define M_ATTRS (METHOD_ATTRIBUTE_PUBLIC | METHOD_ATTRIBUTE_STATIC)
+#define METHOD_ATTRIBUTE_PUBLIC 0x0006
+#define METHOD_ATTRIBUTE_STATIC 0x0010
+#define M_ATTRS (METHOD_ATTRIBUTE_PUBLIC | METHOD_ATTRIBUTE_STATIC)
 	monoInvocationMethod = mono_class_get_method_from_name_flags (monoScriptClass, "main", 0, M_ATTRS);
-	if (monoInvocationMethod == nil) {
+	if (monoInvocationMethod == nil) 
+	{
 		[self logMessage:@"Could not find a Main method. Scripts must contain a class 'Script' with a public method 'main()' as an entry point."];
 		mono_assembly_close(monoAssembly);
 		monoAssembly = nil;
@@ -355,21 +363,22 @@ NSInteger CompilerCSharp;
 	
 	// Initialize an object of the script class defined in the assembly
 	monoScriptObject = mono_object_new(mono_domain_get(), monoScriptClass);
-	if (monoScriptObject == nil) {
+	if (monoScriptObject == nil) 
+	{
 		[self logMessage:@"Unable to create new script object."];
 		mono_assembly_close(monoAssembly), monoAssembly = nil;
 		mono_image_close(monoImage), monoImage = nil;
 		return FALSE;
 	}
-
+	
 	mono_runtime_object_init(monoScriptObject);
 	monoObjectGCHandle = mono_gchandle_new(monoScriptObject, 1);
 	
 	mono_domain_set(rootMonoDomain, 0);
 	
 	[self createInputPortsForScriptFields];
-
-//	[[self patch] setNeedsExecution];
+	
+	//	[[self patch] setNeedsExecution];
 	[self execute:nil atTime:0.0 withArguments:nil];
 	
 	return TRUE;
@@ -377,18 +386,17 @@ NSInteger CompilerCSharp;
 
 - (BOOL) compileAndLoadMonoScript
 {
-	// Write the source to a temporary file
-
 	if (self.scriptSourceCode == nil)
 		return NO;
-	
 	
 	// Get file paths for the source and executable
 	const char *sourceFilePrefix = "qc-mono-tmp-";
 	NSString *sourceFilePath = [[[NSString alloc] initWithCString:tempnam([NSTemporaryDirectory() cStringUsingEncoding:[NSString defaultCStringEncoding]], sourceFilePrefix)] autorelease];
 	NSString *destFilePath = [sourceFilePath stringByAppendingPathExtension:@"mono.exe"];
 	
-	// Write the source to a temp file
+	NSLog(@"Src: %@", sourceFilePath);
+	
+	// Write the source to a temporary file
 	NSError *error = nil;
 	[self.scriptSourceCode writeToFile:sourceFilePath atomically:NO encoding:[NSString defaultCStringEncoding] error:&error];
 	if (error)
@@ -406,7 +414,6 @@ NSInteger CompilerCSharp;
 	compileCommand = [compileCommand stringByReplacingOccurrencesOfString:@"%sourcefilepath%" withString:sourceFilePath];
 	compileCommand = [compileCommand stringByReplacingOccurrencesOfString:@"%destfilepath%" withString:destFilePath];
 	
-	//NSLog(@"Args:%@", compileArguments);
 	NSArray *compileArguments = [NSArray arrayWithObjects:
 								 @"-l",
 								 @"-c",
@@ -416,7 +423,7 @@ NSInteger CompilerCSharp;
 	[compileTask setLaunchPath:@"/bin/bash"];
 	[compileTask setArguments:compileArguments];
 	[compileTask setCurrentDirectoryPath:[@"~" stringByExpandingTildeInPath]];
-
+	
 	// Configure a pipe so that NSTask doesn't mess with our output
 	// Matching the input&output keeps the log where it belongs
 	NSPipe *pipe = [NSPipe pipe];
@@ -446,7 +453,7 @@ NSInteger CompilerCSharp;
 	self.consoleText = outputString;
 	
 	int compileStatus = [compileTask terminationStatus];
-
+	
 	// Load the compiled assembly if compilation was successful and update the compiler status flags
 	if (compileStatus == 0)
 	{
@@ -454,7 +461,7 @@ NSInteger CompilerCSharp;
 			self.compilerOK = YES;
 		else
 			self.compilerWarning = YES;
-
+		
 		// The accessor will load the assembly data into the Mono interpreter
 		self.monoImageData = [NSData dataWithContentsOfFile:destFilePath];
 	}
@@ -463,7 +470,7 @@ NSInteger CompilerCSharp;
 		self.monoImageData = nil;
 		self.compilerError = YES;
 	}
-		
+	
 	[compileTask release];
 	
 	return (compileStatus == 0);
@@ -490,7 +497,6 @@ NSInteger CompilerCSharp;
 			if ([type isEqualToString:QCPortTypeStructure] && [[[port class] description] isEqualToString:@"QCStructureDictionaryPort"])
 				return YES;
 			else {
-				NSLog(@"Remove port: %@ Ports: %@", key, ports);
 				[self removeInputPortForKey:key];
 				return NO;
 			}
@@ -504,23 +510,25 @@ NSInteger CompilerCSharp;
 - (void) addMonoInputPortWithType:(NSString *)type forKey:(NSString *)key withAttributes:(NSDictionary *)attributes
 {
 	NSArray *inputPorts = [[self patch] customInputPorts];
-
+	
 	if (![self validateMonoPortWithType:type key:key fromPorts:inputPorts])
 	{
-		//NSLog(@"Added input type: %@ key: %@ attributes: %@", type, key, attributes);
 		[self addInputPortWithType:type forKey:key withAttributes:attributes];
 	}
 }
 
+// Adds an input port if not present in the current patch output ports array
 - (void) addMonoOutputPortWithType:(NSString *)type forKey:(NSString *)key withAttributes:(NSDictionary *)attributes
 {
 	NSArray *outputPorts = [[self patch] customOutputPorts];
-
+	
 	// Add the port if it's not already there
 	if (![self validateMonoPortWithType:type key:key fromPorts:outputPorts])
 		[self addOutputPortWithType:type forKey:key withAttributes:attributes];
 }
 
+// Creates and removes ports as necessary so that the patch's input and output
+// ports match the inputPortDescriptions and outputPortDescriptions arrays
 - (void) synchPorts
 {
 	[self synchInputPorts];
@@ -551,14 +559,12 @@ NSInteger CompilerCSharp;
 
 - (void) createInputPortsForScriptFields
 {
-	NSLog(@"createInputPortsForScriptFields");
-	
 	if (monoScriptClass == nil || monoScriptObject == nil)
 		return;
 	
 	NSMutableArray *newInputPortDescriptions = [NSMutableArray array];
 	NSMutableArray *newOutputPortDescriptions = [NSMutableArray array];
-
+	
 	MonoType *field_type;
 	int type_type;
 	MonoObject *field_object;
@@ -575,21 +581,18 @@ NSInteger CompilerCSharp;
 	{
 		field_type = mono_field_get_type (field);		
 		fieldName = [NSString stringWithUTF8String:mono_field_get_name(field)];		
-
+		
 		if ([fieldName length] > 5 && [fieldName hasPrefix:@"input"])
 		{
 			char *field_type_name = mono_type_get_name(field_type);
 			type_type = mono_type_get_type(field_type);
-
+			
 			portAttributes = [NSMutableDictionary dictionary];
-	
-			portType = mono_get_qcport_type_for_type(type_type);
+			portType = qcm_get_qcport_type_for_type(type_type);
 			
-			NSLog(@"Input Field Type: %s", field_type_name);
-			
-			// NOTE: I would prefer that this be a case statement.  There are type identifiers but
-			// I don't know how to get them from the field object
-			if (strcmp(field_type_name, "System.Object[]") == 0) {
+			// TODO: switch to select statement
+			if (strcmp(field_type_name, "System.Object[]") == 0) 
+			{
 				fieldValue = nil;
 			}
 			else if (strcmp(field_type_name, "System.String[]") == 0)
@@ -597,17 +600,17 @@ NSInteger CompilerCSharp;
 				/*
 				 If a default value is specified create a menu for any inputs specified as an array of strings
 				 */
-				/* 
-				 Note: adding a menu at this stage seems to crash QC for some reason.
-				 The line setting the QCPortAttributeMenuItemKey should handle this.
-				 Instead we will use an ordinary index port :(
-				 TODO: find a way to create these such that it doesn't crash QC
-				 */
-				NSArray *menuItems = mono_get_string_array_from_field(monoScriptObject, field);
+				NSArray *menuItems = qcm_get_string_array_from_field(monoScriptObject, field);
 				if (menuItems && [menuItems count] > 0)
 				{
 					portType = QCPortTypeIndex;
 					[portAttributes setObject:QCPortTypeIndex forKey:QCPortAttributeTypeKey];
+					/* 
+					 Note: adding a menu at this stage seems to crash QC for some reason.
+					 The line setting the QCPortAttributeMenuItemKey should handle this.
+					 Instead we will use an ordinary index port :(  If this is ever corrected
+					 then uncommenting the following line should create the menu items array
+					 */
 					//[portAttributes setObject:menuItems forKey:QCPortAttributeMenuItemsKey];
 					[portAttributes setObject:[NSNumber numberWithInt:0] forKey:QCPortAttributeDefaultValueKey];
 					[portAttributes setObject:[NSNumber numberWithInt:0] forKey:QCPortAttributeMinimumValueKey];
@@ -628,26 +631,26 @@ NSInteger CompilerCSharp;
 			[portAttributes setObject:[fieldName substringFromIndex:5] forKey:QCPortAttributeNameKey];
 			
 			[newInputPortDescriptions addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-								   portType, kQCPortType,
-								   fieldName, kQCPortKey,
-								   portAttributes, kQCPortAttributes,
-								   nil]];
+												 portType, kQCPortType,
+												 fieldName, kQCPortKey,
+												 portAttributes, kQCPortAttributes,
+												 nil]];
 		}
-
+		
 		else if ([fieldName length] > 6 && [fieldName hasPrefix:@"output"])
 		{
 			int type_type = mono_type_get_type(field_type);
 			portAttributes = [NSMutableDictionary dictionary];
 			
-			portType = mono_get_qcport_type_for_type(type_type);
+			portType = qcm_get_qcport_type_for_type(type_type);
 			
 			[portAttributes setObject:[fieldName substringFromIndex:6] forKey:QCPortAttributeNameKey];
 			
 			[newOutputPortDescriptions addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-									  portType, kQCPortType,
-									  fieldName, kQCPortKey,
-									  portAttributes, kQCPortAttributes,
-									  nil]];
+												  portType, kQCPortType,
+												  fieldName, kQCPortKey,
+												  portAttributes, kQCPortAttributes,
+												  nil]];
 		}
 	}
 	
@@ -656,25 +659,31 @@ NSInteger CompilerCSharp;
 	for (NSDictionary *portDescription in inputPortDescriptions)
 	{
 		matchedPort = FALSE;
-		for (NSDictionary *newPortDescription in newInputPortDescriptions) {
-			if ([[portDescription objectForKey:kQCPortKey] isEqualToString:[newPortDescription objectForKey:kQCPortKey]]) {
-				if ([[portDescription objectForKey:kQCPortType] isEqualToString:[newPortDescription objectForKey:kQCPortType]]) {
+		for (NSDictionary *newPortDescription in newInputPortDescriptions) 
+		{
+			if ([[portDescription objectForKey:kQCPortKey] isEqualToString:[newPortDescription objectForKey:kQCPortKey]]) 
+			{
+				if ([[portDescription objectForKey:kQCPortType] isEqualToString:[newPortDescription objectForKey:kQCPortType]]) 
+				{
 					matchedPort = TRUE; 
 					break;
 				}
 			}
 		}
-
+		
 		if (!matchedPort)
 			[self removeInputPortForKey:[portDescription objectForKey:kQCPortKey]];
 	}
-
+	
 	for (NSDictionary *portDescription in outputPortDescriptions)
 	{
 		matchedPort = FALSE;
-		for (NSDictionary *newPortDescription in newOutputPortDescriptions) {
-			if ([[portDescription objectForKey:kQCPortKey] isEqualToString:[newPortDescription objectForKey:kQCPortKey]]) {
-				if ([[portDescription objectForKey:kQCPortType] isEqualToString:[newPortDescription objectForKey:kQCPortType]]) {
+		for (NSDictionary *newPortDescription in newOutputPortDescriptions) 
+		{
+			if ([[portDescription objectForKey:kQCPortKey] isEqualToString:[newPortDescription objectForKey:kQCPortKey]]) 
+			{
+				if ([[portDescription objectForKey:kQCPortType] isEqualToString:[newPortDescription objectForKey:kQCPortType]]) 
+				{
 					matchedPort = TRUE; 
 					break;
 				}
@@ -710,7 +719,8 @@ NSInteger CompilerCSharp;
 		fieldName = [NSString stringWithUTF8String:mono_field_get_name(field)];		
 		field_new_value = nil;
 		
-		switch (type_type) {
+		switch (type_type) 
+		{
 			case MONO_TYPE_END:
 			case MONO_TYPE_VOID:
 			case MONO_TYPE_BOOLEAN:
@@ -811,7 +821,7 @@ NSInteger CompilerCSharp;
 			case MONO_TYPE_SZARRAY:
 			{
 				NSDictionary *objectDict = [self valueForInputKey:fieldName];
-				MonoArray *array = mono_array_create_from_dictionary(mono_domain_get(), objectDict);
+				MonoArray *array = qcm_array_create_from_dictionary(mono_domain_get(), objectDict);
 				mono_field_set_value(monoScriptObject, field, array);
 				field_new_value = nil;
 				break;
@@ -855,7 +865,6 @@ NSInteger CompilerCSharp;
 		if ([fieldName length] > 6 && [fieldName hasPrefix:@"output"])
 		{
 			field_type_name = mono_type_get_name(field_type);
-			NSLog(@"Update Output %@: %s", fieldName, field_type_name);
 			fieldValue = nil;
 			
 			field_object = mono_field_get_value_object(mono_domain_get(), field, monoScriptObject);
@@ -883,8 +892,7 @@ NSInteger CompilerCSharp;
 
 - (void) enableExecution:(id<QCPlugInContext>)context
 {
-	NSLog(@"Enable execution");
-	needsCompile = YES;
+	shouldCompile = YES;
 }
 
 - (BOOL) execute:(id<QCPlugInContext>)context atTime:(NSTimeInterval)time withArguments:(NSDictionary*)arguments
@@ -899,9 +907,10 @@ NSInteger CompilerCSharp;
 	}
 	else
 		return NO;
-
+	
 	// If an exception was raised, write the details to standard out and raise an NSException
-	if (exc != nil) {
+	if (exc != nil) 
+	{
 		
 		mono_print_unhandled_exception (exc);
 		NSString *exceptionString = @"Exception raised in Mono invocation method.  See console for details";
@@ -919,15 +928,15 @@ NSInteger CompilerCSharp;
 - (void) disableExecution:(id<QCPlugInContext>)context
 {
 	/*	
-	Called by Quartz Composer when the plug-in instance stops being used by Quartz Composer.
-	*/
+	 Called by Quartz Composer when the plug-in instance stops being used by Quartz Composer.
+	 */
 }
 
 - (void) stopExecution:(id<QCPlugInContext>)context
 {
 	/*
-	Called by Quartz Composer when rendering of the composition stops: perform any required cleanup for the plug-in.
-	*/
+	 Called by Quartz Composer when rendering of the composition stops: perform any required cleanup for the plug-in.
+	 */
 }
 
 #pragma mark -

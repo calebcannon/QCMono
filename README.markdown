@@ -1,8 +1,20 @@
-#QCMono
+QCMono
+======
 
 This Quartz Composer plugin uses the Mono development framework to provide scripting support using C# and other languages within the Quartz Composer compositions.
 
-##License
+Installing
+----------
+
+Mono 2.8 or later must be installed to use this plugin.  Mono can be downloaded from 
+	
+	http://www.go-mono.com/mono-downloads/download.html
+
+Note: the Mono 2.8 framework contains a broken symlink.  This will prevent XCode from building the QCMono plugin.  To correct the problem,
+replace the broken 'Mono' symlink in /Library/Frameworks/Mono.framework/ with a new symlink pointing to /Library/Frameworks/Mono.framework/Versions/Current/lib/libmono-2.0.dylib
+
+License
+-------
 
 Copyright (c) 2010 Caleb Cannon
 
@@ -20,17 +32,14 @@ freely, subject to the following restrictions:
 
 3. This notice may not be removed or altered from any source distribution.
 
-##Additional Sources
+Additional Sources
+------------------
 
-###LineNumberingTextView by Koen van der Drift
-http://home.earthlink.net/~kvddrift/software/
+* LineNumberingTextView by Koen van der Drift - http://home.earthlink.net/~kvddrift/software/
+* KSyntaxColoredTextDocument by Uli Kusterer - http://github.com/uliwitness/UKSyntaxColoredTextDocument
 
-###UKSyntaxColoredTextDocument by Uli Kusterer
-http://github.com/uliwitness/UKSyntaxColoredTextDocument
-
-##Revisions
-
-##Contact Information
+Contact Information
+-------------------
 
 Get the latest version of QCMono at
 

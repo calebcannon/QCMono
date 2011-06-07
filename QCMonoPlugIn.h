@@ -48,7 +48,7 @@ extern void mono_mkbundle_init();
 	BOOL compilerWarning;
 	BOOL compilerOK;
 	
-	BOOL needsCompile;
+	BOOL shouldCompile;
 	
 	NSInteger selectedCompilerIndex;
 }

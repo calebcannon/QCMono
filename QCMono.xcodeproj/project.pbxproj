@@ -72,6 +72,7 @@
 		A881462D127C984100FFE3DD /* QCMonoMultiSyntaxColoredTextDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCMonoMultiSyntaxColoredTextDocument.h; sourceTree = "<group>"; };
 		A881462E127C984100FFE3DD /* QCMonoMultiSyntaxColoredTextDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCMonoMultiSyntaxColoredTextDocument.m; sourceTree = "<group>"; };
 		A8814652127C9A9C00FFE3DD /* compilers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = compilers.plist; sourceTree = "<group>"; };
+		A896E7A51287384F00059226 /* README.ukscd.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.ukscd.markdown; sourceTree = "<group>"; };
 		A8C438F9127A8D01000934FE /* UKTextDocGoToBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKTextDocGoToBox.h; sourceTree = "<group>"; };
 		A8C438FA127A8D01000934FE /* UKTextDocGoToBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKTextDocGoToBox.m; sourceTree = "<group>"; };
 		A8C438FB127A8D01000934FE /* NSArray+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Color.h"; sourceTree = "<group>"; };
@@ -196,6 +197,7 @@
 		A8EE3CB8127158D9006E5AEE /* UKSyntaxColoredDocument */ = {
 			isa = PBXGroup;
 			children = (
+				A896E7A51287384F00059226 /* README.ukscd.markdown */,
 				A8EE3CEC12715AA3006E5AEE /* UKSyntaxColoredTextViewController.h */,
 				A8EE3CED12715AA3006E5AEE /* UKSyntaxColoredTextViewController.m */,
 				A8EE3CEE12715AA3006E5AEE /* UKSyntaxColoredTextDocument.h */,

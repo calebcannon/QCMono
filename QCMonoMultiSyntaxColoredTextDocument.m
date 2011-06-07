@@ -18,8 +18,8 @@
 	{
 		NSPopUpButton *button = sender;
 		NSString *compilerName = [[button selectedItem] title];
-		NSString *syntaxDefinitionFilename = [compilerName stringByAppendingPathExtension:@"plist"];
-		[self setSyntaxDefinitionFilename:syntaxDefinitionFilename];
+		NSString *filename = [compilerName stringByAppendingPathExtension:@"plist"];
+		[self setSyntaxDefinitionFilename:filename];
 	}
 }
 
